@@ -1,6 +1,6 @@
 export default {
     template: `
-        <section class="email-app">
+        <section class="email-app main-layout">
         Email-Page
         </section>
     `,

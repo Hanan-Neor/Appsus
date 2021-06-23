@@ -1,6 +1,6 @@
 export default {
     template: `
-        <section class="keep-app">
+        <section class="keep-app main-layout">
         Keep-Page
 
         </section>
