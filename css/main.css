@@ -1,5 +1,5 @@
-@import '/css/basic/base.css';
-@import '/css/basic/fonts.css';
+@import '../css/basic/base.css';
+@import '../css/basic/fonts.css';
 @import '../css/basic/helpers.css';
 
 /* ========== MAIN PAGE & COMPONENTS ========== */
