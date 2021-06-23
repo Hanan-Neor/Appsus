@@ -9,7 +9,7 @@ export const emailService = {
     // remove,
     // save,
     // getEmptyCar,
-    // getById
+    getById
 };
 
 function query() {
@@ -28,9 +28,11 @@ function query() {
 //     }
 // }
 
-// function getById(carId) {
-//     return storageService.get(CARS_KEY, carId);
-// }
+function getById(emailId) {
+    return storageService.get(EMAILS_KEY, emailId)
+                    .then(email=> { return email})
+                    // .then(email=> { return email})
+}
 
 // function getEmptyCar() {
 //     return {
@@ -46,10 +48,10 @@ function _createEmails() {
                 let emails = mails;
                 if (!emails || !emails.length) {
                     emails = [];
-                    emails.push(_createEmail('abraham', 'Welcome!' , 'bla bla bla bla bla'));
-                    emails.push(_createEmail('shuki', 'Welcome!' , 'bla bla bla bla bla'));
-                    emails.push(_createEmail('rachel', 'Welcome!' , 'bla bla bla bla bla'));
-                    emails.push(_createEmail('aba', 'Welcome!' , 'bla bla bla bla bla'));
+                    emails.push(_createEmail('m101','abraham', 'Welcome!' , 'bla bla bla bla bla'));
+                    emails.push(_createEmail('m102','shuki', 'Welcome!' , 'bla bla bla bla bla'));
+                    emails.push(_createEmail('m103','rachel', 'Welcome!' , 'bla bla bla bla bla'));
+                    emails.push(_createEmail('m104','aba', 'Welcome!' , 'bla bla bla bla bla'));
                     storageService.postMany(EMAILS_KEY, emails);
                 }
                 return emails;
@@ -57,9 +59,10 @@ function _createEmails() {
     // return emails;
 }
 
-function _createEmail(from , subject , body , isRead , sentAt = Date.now() ) {
+function _createEmail( id ,from , subject , body , isRead , sentAt = Date.now() ) {
     const email = {
         // id: storageService.makeId(),
+        id,
         from,
         subject,
         body,

@@ -2,13 +2,13 @@
 export default {
     props: ['email'],
     template: `
-     <!-- <router-link :to="'/email-app/'+email.id"> -->
+     <router-link :to="'/email/'+email.id">
     <li class="email-preview">
-        {{email.from}} |
-        {{email.subject}} |
-        {{email.sentAt}}
+        <div>{{email.from}}</div>
+        <div>{{email.subject}}</div>
+        <div>{{email.sentAt}}</div>
     </li>
-<!-- </router-link> -->
+</router-link>
           `,
     computed:{
         // dateToShow(){
@@ -20,5 +20,9 @@ export default {
         // onDeleteReview(){
             
         // }
+    },
+    created(){
+// console.log(this.email);
     }
+
 }

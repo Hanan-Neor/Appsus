@@ -1,6 +1,7 @@
 import homePage from './pages/home-page.js';
 import emailApp from './apps/email/pages/email-app.js';
 import emailDetails from './apps/email/pages/email-details.js';
+import emailList from './apps/email/cmps/email-list.js';
 import keepApp from './apps/keep/pages/keep-app.js';
 import keepDetails from './apps/keep/pages/keep-details.js';
 // import bookApp from './apps/book/';
@@ -15,17 +16,21 @@ const routes = [
     {
         path: '/email',
         component: emailApp,
-        // children: [{
-        //     path: '/email/compose',
-        //     components: {
-        //         compose: emailCompose
-        //     }
-        // }, ]
+       children:[
+           {
+            path: '/email/eamil-list',
+            component: emailList,
+        },
+        //    {
+        //        path: '/email/:emailId',
+        //        component: emailDetails,
+        //    },
+
+       ]
     },
     {
         path: '/email/:emailId', // : => Param
-
-        component: emailDetails
+        component: emailDetails,
     },
 
     {
