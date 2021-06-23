@@ -2,11 +2,12 @@
 
 
 /* flex helpers */
-.main-layout{
-    max-width:1000px;
+
+.main-layout {
+    max-width: 1000px;
     min-height: 80vh;
     background-color: rgb(223, 223, 223);
-    margin:0 auto;
+    margin: 0 auto;
 }
 
 .flex {
@@ -19,6 +20,18 @@
 
 .flex.align-center {
     align-items: center;
+}
+
+.flex.justify-contect-center {
+    justify-content: center;
+}
+
+.flex-wrap {
+    flex-wrap: wrap
+}
+
+.flex.column {
+    flex-direction: column;
 }
 
 

@@ -1,14 +1,12 @@
+// import { utilService } from '../../../services/util-service.js';
 import { storageService } from '../../../services/async-storage-service.js'
-
 const NOTES_KEY = 'notesBD'
 
 var gNotes = _creatNotes();
 
 export const keepService = {
     query,
-
-
-
+    remove
 }
 
 function query() {
@@ -16,16 +14,6 @@ function query() {
 }
 
 
-// function getNotes() {
-//     return _creatNotes()
-//         .then(notes => {
-//             gNotes = notes;
-//             return Promise.resolve(notes);
-//         })
-//         .catch(err => {
-//             console.log('Error', err)
-//         });
-// }
 
 
 function _creatNotes() {
@@ -39,38 +27,58 @@ function _creatNotes() {
                 notes = [
 
                     {
-                        type: "NoteTxt",
+                        id: storageService.makeId(),
+                        type: "noteTxt",
                         isPinned: true,
                         info: {
                             txt: "Fullstack Me Baby!"
                         }
                     },
                     {
-                        type: "NoteImg",
+                        type: "noteTxt",
+                        isPinned: true,
                         info: {
-                            url: "http://some-img/me",
-                            title: "Me playing Mi"
-                        },
-                        style: {
-                            backgroundColor: "#00d"
+                            txt: "Fullstackaaaaaa!"
                         }
                     },
                     {
-                        type: "NoteTodos",
+                        type: "noteTxt",
+                        isPinned: true,
                         info: {
-                            label: "How was it:",
-                            todos: [
-                                { txt: "Do that", doneAt: null },
-                                { txt: "Do this", doneAt: 187111111 }
-                            ]
+                            txt: "Fullstack hhhh!"
                         }
-                    }
+                    },
+                    // {
+                    //     type: "noteImg",
+                    //     info: {
+                    //         url: "http://some-img/me",
+                    //         title: "Me playing Mi"
+                    //     },
+                    //     style: {
+                    //         backgroundColor: "#00d"
+                    //     }
+                    // },
+                    // {
+                    //     type: "noteTodos",
+                    //     info: {
+                    //         label: "How was it:",
+                    //         todos: [
+                    //             { txt: "Do that", doneAt: null },
+                    //             { txt: "Do this", doneAt: 187111111 }
+                    //         ]
+                    //     }
+                    // }
                 ];
                 storageService.postMany(NOTES_KEY, notes);
             }
             return (notes)
-        
-        
+
+
         })
+
+}
+
+function remove(noteId) {
+    storageService.remove(NOTES_KEY, noteId)
 
 }
