@@ -3,3 +3,9 @@
 /* @import '/css/apps/email/cmps/email-compose.css';
 @import '/css/apps/email/cmps/email-list.css';
 @import '/css/apps/email/cmps/email-preview.css'; */
+
+
+
+.email-app{
+    gap:20px
+}
