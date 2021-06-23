@@ -1,5 +1,3 @@
-
-
 export const storageService = {
     query,
     get,
@@ -7,7 +5,8 @@ export const storageService = {
     put,
     remove,
     postMany,
-    _save
+    _save,
+    makeId
 }
 
 function query(entityType) {
@@ -58,15 +57,16 @@ function remove(entityType, entityId) {
         })
 }
 
-function _save(entityType, entities) {
-    localStorage.setItem(entityType, JSON.stringify(entities))
-}
 
-function _makeId(length = 5) {
+function makeId(length = 5) {
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     for (var i = 0; i < length; i++) {
         text += possible.charAt(Math.floor(Math.random() * possible.length));
     }
     return text;
+}
+
+function _save(entityType, entities) {
+    localStorage.setItem(entityType, JSON.stringify(entities))
 }
