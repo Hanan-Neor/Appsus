@@ -10,9 +10,9 @@ export default {
     name: 'keep-preview',
     template: `
     <section class="keep-preview flex space-between column ">
-       <component :is="note.type" :note="note" :info="note.info" class="note-content " @remove="remove" />
+       <component :is="note.type" :note="note"  class="note-content " @remove="remove" />
        <!-- <button @click="remove(currNote.id)">X</button> -->
-
+       <!-- :info="note.info" -->
     </section>
     
     `,

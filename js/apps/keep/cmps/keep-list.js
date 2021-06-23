@@ -3,7 +3,7 @@ import keepPreview from './keep-preview.js'
 export default {
     props: ['notes'],
     template: `
-    <section class="keep-list justify-contect-center wrap ">
+    <section  class="keep-list justify-contect-center wrap ">
         <ul class="flex wrap justify-content-center">
             <li v-for="note in notes" :key="note.id" class="clean-list  ">
                 <keep-preview :note="note" @remove="remove" />
