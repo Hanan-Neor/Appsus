@@ -6,6 +6,7 @@ import keepApp from './apps/keep/pages/keep-app.js';
 import keepDetails from './apps/keep/pages/keep-details.js';
 // import bookApp from './apps/book/';
 
+
 const routes = [
 
     {
@@ -18,20 +19,20 @@ const routes = [
         component: emailApp,
        children:[
            {
-            path: '/email/eamil-list',
+            path: '/email/email-list',
             component: emailList,
         },
-        //    {
-        //        path: '/email/:emailId',
-        //        component: emailDetails,
-        //    },
+              {
+               path: '/email/:emailId',
+               component: emailDetails,
+           },
 
        ]
     },
-    {
-        path: '/email/:emailId', // : => Param
-        component: emailDetails,
-    },
+    // {
+    //     path: '/email/:emailId', // : => Param
+    //     component: emailDetails,
+    // },
 
     {
         path: '/keep',

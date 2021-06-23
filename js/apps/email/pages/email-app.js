@@ -9,17 +9,17 @@ export default {
                 <button>New +</button>
                 <ul class="clean-list">
                     <router-link to="/email/email-list"><li>inbox</li></router-link>
-                    <router-link to=""> <li>sent</li></router-link>
+                    <router-link to="/email/bibi"> <li>sent</li></router-link>
                     <router-link to=""><li>favorites</li></router-link>
                     <router-link to=""><li>unread</li></router-link>
                 </ul>
             </aside>
             <!-- <article> -->
-                <email-list :emails="emails" />
+                <!-- <email-list :emails="emails" /> -->
                 <!-- </article> -->
-                <!-- <div>hhhhhhhhh
+                
                 <router-view></router-view>
-</div> -->
+
         </section>
     `,
 

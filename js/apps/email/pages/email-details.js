@@ -2,7 +2,7 @@ import { emailService } from "../services/email-service.js";
 
 export default {
     template: `
-        <section class="email-details main-layout" v-if="email">
+        <section class="email-details" v-if="email">
        <div><h1>{{email.subject}}</h1></div>
        <div class="flex space-between">
            <div>{{email.from}}</div>
