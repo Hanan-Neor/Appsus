@@ -6,10 +6,4 @@ body{
     margin:0;
 }
 
-.main-layout{
-    max-width:700px;
-    min-height: 80vh;
-    background-color: lightseagreen;
-    margin:0 auto;
 
-}
