@@ -4,16 +4,16 @@ import keepPreview from '../cmps/keep-preview.js'
 
 export default {
     template: `
-        <section class="keep-app main-layout">
+        <section  v-if="notes" class="keep-app main-layout">
        <h1>Keep-Page</h1> 
        <!-- <add-keep/> -->
-        <keep-list :notes="notes" @remove="remove"/>
+        <keep-list  :notes="notes" @remove="remove"/>
         </section>
     `,
 
     data() {
         return {
-            notes: [],
+            notes: null
         }
     },
 
@@ -21,12 +21,8 @@ export default {
         keepService.query()
             .then(notes => {
                 this.notes = notes
-                    // console.log(notes);
-            }),
-            // eventBus.$on('removeNote', (id) => {
-            //     this.emitRemove(id);
-            // });
-            console.log(this.notes);
+                console.log(notes);
+            })
     },
 
 
@@ -44,10 +40,8 @@ export default {
 
     },
     components: {
-        keepService,
         keepList,
         keepPreview
-
     }
 
 

@@ -10,7 +10,9 @@ export const keepService = {
 }
 
 function query() {
-    return storageService.query(NOTES_KEY);
+    console.log('hi')
+    return storageService.query(NOTES_KEY)
+        .then(notes => { return notes });
 }
 
 
@@ -27,7 +29,7 @@ function _creatNotes() {
                 notes = [
 
                     {
-                        id: storageService.makeId(),
+                        id: 'n101',
                         type: "noteTxt",
                         isPinned: true,
                         info: {
@@ -35,6 +37,7 @@ function _creatNotes() {
                         }
                     },
                     {
+                        id: 'n102',
                         type: "noteTxt",
                         isPinned: true,
                         info: {
@@ -42,6 +45,7 @@ function _creatNotes() {
                         }
                     },
                     {
+                        id: 'n103',
                         type: "noteTxt",
                         isPinned: true,
                         info: {

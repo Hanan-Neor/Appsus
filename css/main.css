@@ -3,12 +3,14 @@
 @import '../css/basic/helpers.css';
 
 /* ========== MAIN PAGE & COMPONENTS ========== */
+
 @import '../css/pages/home-page.css';
 @import '../css/cmps/app-footer.css';
 @import '../css/cmps/app-header.css';
 
-
 /* ============= APPS =============== */
+
+
 /* EMAIL */
 
 @import '../css/apps/email/pages/email-app.css';
@@ -20,17 +22,19 @@
 @import '/css/apps/email/cmps/email-preview.css'; */
 
 
-
 /* KEEP */
+
+
+/* @import '/css/apps/keep/pages/keep-app.css';
+@import '/css/apps/keep/pages/keep-details.css';
+@import '/css/apps/keep/cmps/keep-compose.css';
+@import '/css/apps/keep/cmps/keep-list.css';
+@import '/css/apps/keep/cmps/keep-preview.css'; */
 
 @import '../css/apps/keep/pages/keep-app.css';
 @import '../css/apps/keep/pages/keep-details.css';
-
-
 @import '../css/apps/keep/cmps/keep-compose.css';
 @import '../css/apps/keep/cmps/keep-list.css';
 @import '../css/apps/keep/cmps/keep-preview.css';
 
-
-
-
+/* >>>>>>>e12a1386dfc2f8a7b5ceac8d9dc3480f3c02b4bc */
