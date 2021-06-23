@@ -1,4 +1,5 @@
 import { emailService } from "../services/email-service.js";
+import emailList from "../cmps/email-list.js";
 
 export default {
     template: `
@@ -13,9 +14,9 @@ export default {
                     <li>unread</li>
                 </ul>
             </aside>
-            <article>
-                {{emails}}
-            </article>
+            <!-- <article> -->
+                <email-list :emails="emails" />
+            <!-- </article> -->
 
         </section>
     `,
@@ -34,7 +35,7 @@ export default {
 
     },
     components: {
-
+        emailList
     },
 
     created() {
