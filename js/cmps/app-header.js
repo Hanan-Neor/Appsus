@@ -1,6 +1,6 @@
 export default {
     template: `
-    <header class="app-header flex space-between">
+    <header class="app-header flex space-between align-center">
         
         <router-link to="/" class= "header-logo">Appsus</router-link>
 

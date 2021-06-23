@@ -4,6 +4,7 @@ export default {
     props: ['notes'],
     template: `
     <section class="keep-list">
+        {{notes}}
         <ul>
             <li v-for="currNote in notes" :key="currNote.id">
                 <keep-previeew :note="currNote" />
@@ -17,4 +18,7 @@ export default {
     components: {
         keepPreview,
     },
+    created(){
+        console.log(this.notes);
+    }
 }
