@@ -1,6 +1,6 @@
 @import '/css/basic/base.css';
 @import '/css/basic/fonts.css';
-@import '/css/basic/helpers.css';
+@import '../css/basic/helpers.css';
 
 /* ========== MAIN PAGE & COMPONENTS ========== */
 @import '/css/pages/home-page.css';
@@ -11,7 +11,7 @@
 /* ============= APPS =============== */
 /* EMAIL */
 
-@import '/css/apps/email/pages/email-app.css';
+@import '../css/apps/email/pages/email-app.css';
 
 /* @import '/css/apps/email/pages/email-details.css';
 
