@@ -1,3 +1,50 @@
 .add-note input {
     width: 300px;
+    text-align: center;
+    /* align-items: center; */
 }
+
+.add-note-input {
+    text-align: center;
+}
+
+.add-note h1 {
+    text-align: center;
+}
+
+.color-palete {
+    position: absolute;
+    right: 0px;
+    /* top: 4px; */
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.color {
+    position: relative;
+}
+
+.color-input {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.container-btn {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    gap: 20px
+}
+
+.btn-note {
+    background-color: transparent;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* .note {
+    height: 100%;
+} */

@@ -10,7 +10,7 @@ export default {
        <h1>Keep-Page</h1> 
        <add-note @addNote="creatNote" />
        <!-- <keep-details v-if/> -->
-        <keep-list v-if="notes" :notes="notes" @remove="remove"/>
+        <keep-list v-if="notes" :notes="notes" @remove="remove" @update="updateNote" @change="updateColor"/>
         </section>
     </section>
     `,
@@ -50,10 +50,19 @@ export default {
                 //     this.loadNotes();
                 // })
         },
-        keepService(note) {
-            notesService.update(note).then(res => {
+
+        updateNote(note) {
+            keepService.update(note).then(() => {
                 this.loadnotes()
             })
+
+        },
+        updateColor(updateNoteColor) {
+            keepService.update(updateNoteColor).then(() => {
+                // this.loadnotes()
+            })
+
+
         }
 
     },
