@@ -6,7 +6,7 @@ export const storageService = {
     remove,
     postMany,
     _save,
-    makeId
+    _makeId
 }
 
 function query(entityType) {
@@ -58,7 +58,7 @@ function remove(entityType, entityId) {
 }
 
 
-function makeId(length = 5) {
+function _makeId(length = 5) {
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     for (var i = 0; i < length; i++) {

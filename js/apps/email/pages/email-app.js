@@ -5,15 +5,16 @@ export default {
     template: `
         <section class="email-app main-layout flex">
         
-            <aside>
-                <button>New +</button>
+            <nav>
+                <!-- <router-link to="/email/email-compose"> <button>New +</button></router-link> -->
+                <router-link to="/email/email-compose"> <button>New +</button></router-link>
                 <ul class="clean-list">
                     <router-link to="/email/email-list"><li>inbox</li></router-link>
                     <router-link to="/email/bibi"> <li>sent</li></router-link>
                     <router-link to=""><li>favorites</li></router-link>
                     <router-link to=""><li>unread</li></router-link>
                 </ul>
-            </aside>
+            </nav>
             <!-- <article> -->
                 <!-- <email-list :emails="emails" /> -->
                 <!-- </article> -->

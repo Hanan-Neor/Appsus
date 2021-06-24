@@ -2,8 +2,10 @@ import homePage from './pages/home-page.js';
 import emailApp from './apps/email/pages/email-app.js';
 import emailDetails from './apps/email/pages/email-details.js';
 import emailList from './apps/email/cmps/email-list.js';
+import emailCompose from './apps/email/cmps/email-compose.js';
 import keepApp from './apps/keep/pages/keep-app.js';
 import keepDetails from './apps/keep/pages/keep-details.js';
+
 // import bookApp from './apps/book/';
 
 
@@ -21,12 +23,15 @@ const routes = [
            {
             path: '/email/email-list',
             component: emailList,
-        },
-              {
+            },
+            {
+               path: '/email/email-compose',
+               component: emailCompose,
+            },
+            {
                path: '/email/:emailId',
                component: emailDetails,
-           },
-
+            },
        ]
     },
     // {
