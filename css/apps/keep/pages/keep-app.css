@@ -1,5 +1,5 @@
-@import '../css/apps/keep/pages/keep-details.css';
-@import '../css/apps/keep/cmps/keep-compose.css';
-@import '../css/apps/keep/cmps/add-note.css';
-@import '../css/apps/keep/cmps/keep-list.css';
-@import '../css/apps/keep/cmps/keep-preview.css';
+@import '../pages/keep-details.css';
+@import '../cmps/keep-compose.css';
+@import '../cmps/keep-list.css';
+@import '../cmps/keep-preview.css';
+@import '../cmps/add-note.css';
