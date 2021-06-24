@@ -1,7 +1,7 @@
 import noteTxt from './note-txt.js'
-// import noteImg from './note-img.js'
-// import noteToDo from './note-todos.js'
-// import noteVideo from './note-video.js'
+import noteImg from './note-img.js'
+// import noteToDos from './note-todos.js'
+import noteVideo from './note-video.js'
 
 
 
@@ -28,9 +28,9 @@ export default {
 
     components: {
         noteTxt,
-        // noteImg,
-        // noteToDo,
-        // noteVideo
+        noteImg,
+        // noteToDos,
+        noteVideo,
     }
 
 

@@ -2,10 +2,12 @@ import keepPreview from './keep-preview.js'
 
 export default {
     props: ['notes'],
+    name: 'keep-list',
     template: `
-    <section  class="keep-list justify-contect-center wrap ">
-        <ul class="flex wrap justify-content-center">
-            <li v-for="note in notes" :key="note.id" class="clean-list" :style="{ 'background-color' : note.style.backgroundColor }" >
+    <section  class="keep-list-container justify-contect-center wrap ">
+        <ul class="notes flex wrap ">
+            <li v-for="note in notes" :key="note.id" class="note clean-list"  >
+            <!-- :style="{ 'background-color' : note.style.backgroundColor }" --> 
                 <keep-preview :note="note" @remove="remove" />
             </li>
         </ul>
@@ -13,9 +15,6 @@ export default {
     </section>
     
     `,
-    components: {
-        keepPreview,
-    },
 
     methods: {
         remove(noteId) {
@@ -31,5 +30,8 @@ export default {
         //     this.emitRemove(id);
         // });
         // console.log(this.notes);
-    }
+    },
+    components: {
+        keepPreview,
+    },
 }

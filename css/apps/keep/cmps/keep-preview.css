@@ -1,9 +1,9 @@
 .keep-preview {
-    border: 1px solid black;
-    border-radius: 5px;
-    margin: 15px;
+    /* border: 1px solid black;
+    border-radius: 5px; */
+    /* margin: 15px; */
     padding: 10px;
-    height: 200x;
-    width: 200px;
-    background-color: rgba(251, 219, 33, 0.288);
+    height: 100%;
+    width: 100%;
+    /* background-color: rgba(251, 219, 33, 0.288); */
 }
