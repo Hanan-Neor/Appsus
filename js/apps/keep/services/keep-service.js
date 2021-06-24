@@ -36,7 +36,7 @@ function _creatNotes() {
                             txt: "Fullstack !"
                         },
                         style: {
-                            backgroundColor: "#F6B6B4"
+                            backgroundColor: "#b31414"
                         }
 
                     },
@@ -122,5 +122,6 @@ function save(note) {
 }
 
 function update(note) {
+    console.log(note)
     return storageService.put(NOTES_KEY, note);
 }

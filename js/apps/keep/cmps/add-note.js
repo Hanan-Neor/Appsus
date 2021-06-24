@@ -6,23 +6,23 @@ export default {
     template: `
      <section class="add-note">
        <h1>Add note</h1>
-         <div v-if="isShow" @click="isShow=false" >
+         <div class="add-note-input" v-if="isShow" @click="isShow=false" >
              <button @click="txt">Text</button>
              <!-- <button @click="img">Img</button>
              <button @click="video">Video</button>
              <button @click="todos">TO-Do</button> -->
-             <input type="text" placeholder="Add note">
+             <input type="text" placeholder="Enter text">
         </div>
 
 
              <div v-else >
                 <component :is="noteType" @add="editNote"/>
                 <div>
-                    <button v-if='isStyling' @click='color'>🎨</button>
-                    <input v-else v-model="bgcStyle" @change="color" type="color">
+                    <!-- <button v-if='isStyling' @click='color'>🎨</button>
+                    <input v-else v-model="bgcStyle" @change="color" type="color"> -->
                         <!-- <button @click="img">img</button>
                         <button @click="todos">ToDo</button> -->
-                        <button @click="txt">Text</button>
+                        <!-- <button @click="txt">Text</button> -->
                         <button title="Add" @click="addNote"><i class="far fa-save"></i></button>
                 </div>
              </div>

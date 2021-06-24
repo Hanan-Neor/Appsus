@@ -5,7 +5,7 @@ export default {
                 <div>
                     <label for="title">Title:
                         <input name="title" v-model="note.label" @blur="add" type="text" placeholder="Enter Title"> 
-                        <button title="Pin" @click="pin">📍</button>
+                        <!-- <button title="Pin" @click="pin">📍</button> -->
                     </label>
                 </div>
                 <textarea name="note" v-model="note.info.txt" @blur="add" placeholder="New note" rows="6" cols="50">
