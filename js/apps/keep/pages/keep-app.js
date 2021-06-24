@@ -1,47 +1,60 @@
 import { keepService } from '../services/keep-service.js';
 import keepList from '../cmps/keep-list.js'
-import keepPreview from '../cmps/keep-preview.js'
+import addNote from '../cmps/add-note.js'
+// import keepPreview from '../cmps/keep-preview.js'
 
 export default {
     template: `
-        <section  v-if="notes" class="keep-app main-layout">
+    <section class="keep-app">
        <h1>Keep-Page</h1> 
-       <!-- <add-keep/> -->
-        <keep-list  :notes="notes" @remove="remove"/>
+       <add-note @addNote="creatNote"/>
+       <!-- <keep-details v-if/> -->
+        <keep-list v-if="notes" :notes="notes" @remove="remove"/>
         </section>
+    </section>
     `,
 
     data() {
         return {
-            notes: null
+            notes: [],
         }
     },
 
     created() {
-        keepService.query()
-            .then(notes => {
-                this.notes = notes
-                console.log(notes);
-            })
+        this.loadNotes();
+        console.log(this.notes)
+            // keepService.query()
+            //     .then(notes => {
+            //         this.notes = notes
+            //         console.log(notes);
+            //     })
     },
 
 
     methods: {
+        loadNotes() {
+            keepService.query().then(notes => (this.notes = notes))
+        },
+
         remove(noteId) {
-            this.$emit('remove', noteId)
-            console.log('notId', noteId)
-                // keepService.remove(noteId);
+            keepService.remove(noteId).then(() => {
+                this.loadNotes();
+            })
+        },
+        creatNote(newNote) {
+
+            keepService.save(newNote)
         }
 
-
     },
+
     computed: {
 
 
     },
     components: {
         keepList,
-        keepPreview
+        addNote
     }
 
 

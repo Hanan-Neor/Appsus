@@ -1,12 +1,16 @@
-// import { utilService } from '../../../services/util-service.js';
+import { utilService } from '../../../services/util-service.js';
 import { storageService } from '../../../services/async-storage-service.js'
+import addNote from '../cmps/add-note.js';
 const NOTES_KEY = 'notesBD'
 
 var gNotes = _creatNotes();
 
 export const keepService = {
     query,
-    remove
+    remove,
+    save
+    //     getEmptyNote,
+    //     addNote,
 }
 
 function query() {
@@ -16,15 +20,10 @@ function query() {
 }
 
 
-
-
 function _creatNotes() {
     return storageService.query(NOTES_KEY)
         .then(notesFromStroage => {
             let notes = notesFromStroage
-
-
-
             if (!notes || notes.length === 0) {
                 notes = [
 
@@ -33,45 +32,57 @@ function _creatNotes() {
                         type: "noteTxt",
                         isPinned: true,
                         info: {
-                            txt: "Fullstack Me Baby!"
+                            txt: "Fullstack !"
+                        },
+                        style: {
+                            backgroundColor: "#F6B6B4"
                         }
+
                     },
+                    // {
+                    //     id: 'n102',
+                    //     type: "noteTxt",
+                    //     isPinned: true,
+                    //     info: {
+                    //         txt: "Fullstackaaaaaa!"
+                    //     }
+                    // },
+                    // {
+                    //     id: 'n103',
+                    //     type: "noteTxt",
+                    //     isPinned: true,
+                    //     info: {
+                    //         txt: "Fullstack hhhh!"
+                    //     }
+                    // },
                     {
                         id: 'n102',
-                        type: "noteTxt",
+                        type: "noteImg",
                         isPinned: true,
                         info: {
-                            txt: "Fullstackaaaaaa!"
+                            url: "https://dalicanvas.co.il/wp-content/uploads/2020/02/%D7%A9%D7%A7%D7%99%D7%A2%D7%94-%D7%A7%D7%9C%D7%90%D7%A1%D7%99%D7%AA-1.jpg",
+                            title: "Me playing Mi"
+                        },
+                        style: {
+                            backgroundColor: "#00d"
                         }
                     },
                     {
                         id: 'n103',
-                        type: "noteTxt",
+                        type: "noteTodos",
                         isPinned: true,
                         info: {
-                            txt: "Fullstack hhhh!"
+                            label: "How was it:",
+                            todos: [
+                                { txt: "Do that", doneAt: null },
+                                { txt: "Do this", doneAt: 187111111 }
+                            ]
+                        },
+                        style: {
+                            backgroundColor: "#C1C1C1"
                         }
                     },
-                    // {
-                    //     type: "noteImg",
-                    //     info: {
-                    //         url: "http://some-img/me",
-                    //         title: "Me playing Mi"
-                    //     },
-                    //     style: {
-                    //         backgroundColor: "#00d"
-                    //     }
-                    // },
-                    // {
-                    //     type: "noteTodos",
-                    //     info: {
-                    //         label: "How was it:",
-                    //         todos: [
-                    //             { txt: "Do that", doneAt: null },
-                    //             { txt: "Do this", doneAt: 187111111 }
-                    //         ]
-                    //     }
-                    // }
+
                 ];
                 storageService.postMany(NOTES_KEY, notes);
             }
@@ -83,6 +94,27 @@ function _creatNotes() {
 }
 
 function remove(noteId) {
-    storageService.remove(NOTES_KEY, noteId)
+    console.log(noteId)
+    return storageService.remove(NOTES_KEY, noteId)
 
+}
+
+// function getEmptyNote() {
+//     let newNote = {
+//         id: utilService.makeId(),
+//         type: noteType
+//     }
+
+
+
+
+
+// }
+
+function save(note) {
+    if (note.id) {
+        return storageService.put(NOTES_KEY, note);
+    } else {
+        return storageService.post(NOTES_KEY, note);
+    }
 }

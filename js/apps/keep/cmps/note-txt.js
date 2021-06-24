@@ -4,7 +4,7 @@ export default {
 <section class="note-txt">
     <button @click="remove">X</button>
     <h2>{{note.label}}</h2>
-    <span>{{info.txt}}</span>
+    <span>{{note.info.txt}}</span>
 </section>
 `,
 
