@@ -4,10 +4,12 @@ import emailFilter from "./email-filter.js";
 export default {
     // props: ['emails'],
     template: `
-<section class="email-list  email-children-layout" v-if="emails">
+<section class="email-list  email-children-layout" v-if="emails" @searchEmail="setFilter">
     <email-filter></email-filter>
 <ul class=" clean-list"  >
-          <email-preview  v-for="email in emails" :key="email.id" :email="email" @deleted="removeEmail" @toggleIsRead="togglingIsRead"/>
+    <email-preview  v-for="email in emails" :key="email.id" :email="email" 
+        @deleted="removeEmail" 
+          @toggleIsRead="togglingIsRead"/>
     </ul>
 </section>
 
@@ -15,6 +17,7 @@ export default {
      data(){
          return{
              emails:null,
+             filterBy:'',
          }
      },
      methods:{
@@ -44,8 +47,22 @@ export default {
         togglingIsRead(email){
             emailService.save(email)
         },
+        setFilter(filterBy) {
+            this.filterBy = filterBy;
+        }
         
      },
+     computed: {
+        emailsToShow() {
+            // return this.books
+            if (!this.filterBy) return this.emails;
+            const searchStr = this.filterBy.toLowerCase();
+            const emailsToShow = this.emails.filter(email => {
+                return email.from.toLowerCase().includes(searchStr);
+            });
+            return emailsToShow;
+        },
+    },
 
 
     components: {

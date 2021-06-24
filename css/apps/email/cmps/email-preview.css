@@ -2,13 +2,15 @@
     display: flex;
     justify-content:space-between ;
     /* margin-bottom: 5px; */
-    padding: 3px;
+    /* padding: 3px; */
+    padding:4px;
+    /* flex-shrink: 1; */
     
 }
 
 .email-preview:hover{
     box-shadow:inset 0px 0px 0px 1px black;
-background-color: beige;
+background-color: rgb(243, 243, 234);
 }
 
 
@@ -23,4 +25,28 @@ font-weight: normal;
 
 .email-preview div:nth-child(2){
     flex:2;
+}
+
+.email-preview .date-and-buttons{
+    text-align: center;
+    position: relative;
+    width:20%;
+}
+
+.email-preview .email-buttons{
+    display: flex;
+    width:100%;
+    /* align-content:  center; */
+    justify-content: center;
+    position: absolute;
+    top:-3px;
+    background-color:inherit;
+    border-radius: 3rem;
+}
+
+.email-preview .email-buttons button{
+    cursor: pointer;
+    /* padding: 0; */
+    height: 27px;
+width:27px
 }

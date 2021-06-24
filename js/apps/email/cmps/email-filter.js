@@ -14,7 +14,7 @@ export default {
     },
     methods:{
         searchEmail(searchInput){
-
+            this.$emit('searchEmail',searchInput)
         }
     }
 
