@@ -10,3 +10,8 @@
     box-shadow:inset 0px 0px 0px 1px black;
 background-color: beige;
 }
+
+
+.email-preview .read{
+    background-color: rgb(255, 255, 255);
+}

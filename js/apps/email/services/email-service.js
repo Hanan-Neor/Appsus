@@ -9,29 +9,31 @@ export const emailService = {
     // remove,
     // save,
     // getEmptyCar,
-    getById
+    getById,
+    remove,
+    save
 };
 
 function query() {
     return storageService.query(EMAILS_KEY);
 }
 
-// function remove(carId) {
-//     return storageService.remove(CARS_KEY, carId);
-// }
+function remove(emailId) {
+    return storageService.remove(EMAILS_KEY, emailId);
+}
 
-// function save(car) {
-//     if (car.id) {
-//         return storageService.put(CARS_KEY, car);
-//     } else {
-//         return storageService.post(CARS_KEY, car);
-//     }
-// }
+function save(email) {
+    if (email.id) {
+        return storageService.put(EMAILS_KEY, email);
+    } else {
+        return storageService.post(EMAILS_KEY, email);
+    }
+}
 
 function getById(emailId) {
     return storageService.get(EMAILS_KEY, emailId)
-                    .then(email=> { return email})
-                    // .then(email=> { return email})
+        .then(email => { return email })
+    // .then(email=> { return email})
 }
 
 // function getEmptyCar() {
@@ -44,29 +46,29 @@ function getById(emailId) {
 
 function _createEmails() {
     return storageService.query(EMAILS_KEY)
-            .then(mails=> {
-                let emails = mails;
-                if (!emails || !emails.length) {
-                    emails = [];
-                    emails.push(_createEmail('m101','abraham', 'Welcome!' , 'bla bla bla bla bla'));
-                    emails.push(_createEmail('m102','shuki', 'Welcome!' , 'bla bla bla bla bla'));
-                    emails.push(_createEmail('m103','rachel', 'Welcome!' , 'bla bla bla bla bla'));
-                    emails.push(_createEmail('m104','aba', 'Welcome!' , 'bla bla bla bla bla'));
-                    storageService.postMany(EMAILS_KEY, emails);
-                }
-                return emails;
-        });   
+        .then(mails => {
+            let emails = mails;
+            if (!emails || !emails.length) {
+                emails = [];
+                emails.push(_createEmail('m101', 'abraham', 'Welcome to Appsus-mail!','Lorem ipsum dolor,sit amet consectetur adipisicing elit.Porro vero nemo ex rem quos earum alias.Nesciunt quia aliquid blanditiis itaque velit, maxime repudiandae necessitatibus ? Optio aperiam iste commodi placeat esse, praesentium dolor nulla accusantium! Expedita voluptates ab perspiciatis provident, eum possimus debitis labore quas magnam, veniam alias sequi minima asperiores quam omnis.Quaerat consequatur vitae odit dicta quasi, error recusandae placeat nihil ? Eos totam voluptatibus unde quia iste in earum voluptatum aliquid atque, voluptatem eveniet id non amet et officia aut magnam sunt aliquam itaque magni fugiat culpa fuga odio.Laudantium minus vero sunt, quia nostrum voluptatem explicabo dolorum'));
+                emails.push(_createEmail('m102', 'shuki', 'Welcome to Appsus-mail!', 'Lorem ipsum dolor,sit amet consectetur adipisicing elit.Porro vero nemo ex rem quos earum alias.Nesciunt quia aliquid blanditiis itaque velit, maxime repudiandae necessitatibus ? Optio aperiam iste commodi placeat esse, praesentium dolor nulla accusantium! Expedita voluptates ab perspiciatis provident, eum possimus debitis labore quas magnam, veniam alias sequi minima asperiores quam omnis.Quaerat consequatur vitae odit dicta quasi, error recusandae placeat nihil ? Eos totam voluptatibus unde quia iste in earum voluptatum aliquid atque, voluptatem eveniet id non amet et officia aut magnam sunt aliquam itaque magni fugiat culpa fuga odio.Laudantium minus vero sunt, quia nostrum voluptatem explicabo dolorum'));
+                emails.push(_createEmail('m103', 'rachel', 'Welcome to Appsus-mail!', 'Lorem ipsum dolor,sit amet consectetur adipisicing elit.Porro vero nemo ex rem quos earum alias.Nesciunt quia aliquid blanditiis itaque velit, maxime repudiandae necessitatibus ? Optio aperiam iste commodi placeat esse, praesentium dolor nulla accusantium! Expedita voluptates ab perspiciatis provident, eum possimus debitis labore quas magnam, veniam alias sequi minima asperiores quam omnis.Quaerat consequatur vitae odit dicta quasi, error recusandae placeat nihil ? Eos totam voluptatibus unde quia iste in earum voluptatum aliquid atque, voluptatem eveniet id non amet et officia aut magnam sunt aliquam itaque magni fugiat culpa fuga odio.Laudantium minus vero sunt, quia nostrum voluptatem explicabo dolorum'));
+                emails.push(_createEmail('m104', 'aba', 'Welcome to Appsus-mail!', 'Lorem ipsum dolor,sit amet consectetur adipisicing elit.Porro vero nemo ex rem quos earum alias.Nesciunt quia aliquid blanditiis itaque velit, maxime repudiandae necessitatibus ? Optio aperiam iste commodi placeat esse, praesentium dolor nulla accusantium! Expedita voluptates ab perspiciatis provident, eum possimus debitis labore quas magnam, veniam alias sequi minima asperiores quam omnis.Quaerat consequatur vitae odit dicta quasi, error recusandae placeat nihil ? Eos totam voluptatibus unde quia iste in earum voluptatum aliquid atque, voluptatem eveniet id non amet et officia aut magnam sunt aliquam itaque magni fugiat culpa fuga odio.Laudantium minus vero sunt, quia nostrum voluptatem explicabo dolorum'));
+                storageService.postMany(EMAILS_KEY, emails);
+            }
+            return emails;
+        });
     // return emails;
 }
 
-function _createEmail( id ,from , subject , body , isRead , sentAt = Date.now() ) {
+function _createEmail(id, from, subject, body, isRead, sentAt = Date.now()) {
     const email = {
         // id: storageService.makeId(),
         id,
         from,
         subject,
         body,
-        isRead : false,
+        isRead: false,
         sentAt,
     };
     return email;
