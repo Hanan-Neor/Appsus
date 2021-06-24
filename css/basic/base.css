@@ -25,3 +25,7 @@ a {
 html {
     font-family: OpenSans-Regular;
 }
+
+textarea{
+    resize: none;
+}
