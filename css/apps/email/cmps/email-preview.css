@@ -12,6 +12,15 @@ background-color: beige;
 }
 
 
-.email-preview .read{
-    background-color: rgb(255, 255, 255);
+.read{
+    background-color: beige;
+font-weight: normal;
+}
+
+.email-preview div:first-child{
+    flex:1;
+}
+
+.email-preview div:nth-child(2){
+    flex:2;
 }

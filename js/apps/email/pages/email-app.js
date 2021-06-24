@@ -9,10 +9,10 @@ export default {
                 <!-- <router-link to="/email/email-compose"> <button>New +</button></router-link> -->
                 <router-link to="/email/email-compose"> <button>New +</button></router-link>
                 <ul class="clean-list">
-                    <router-link to="/email/email-list"><li>inbox</li></router-link>
-                    <router-link to="/email/bibi"> <li>sent</li></router-link>
-                    <router-link to=""><li>favorites</li></router-link>
-                    <router-link to=""><li>unread</li></router-link>
+                    <router-link to="/email/email-list"><li><span>inbox</span></li></router-link>
+                    <router-link to="/email/bibi"> <li><span>sent</span></li></router-link>
+                    <router-link to=""><li><span>favorites</span></li></router-link>
+                    <router-link to=""><li><span>unread</span></li></router-link>
                 </ul>
             </nav>
             <!-- <article> -->

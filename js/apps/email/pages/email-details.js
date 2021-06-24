@@ -8,8 +8,9 @@ export default {
            <div>{{email.from}}</div>
            <div>{{dateToShow}}</div>
        </div>
-       <div>{{email.body}}</div>
-        </section>
+       <div><pre>{{email.body}}</pre></div>
+       <!-- <div>{{email.body}}</div> -->
+    </section>
     `,
 
     data() {

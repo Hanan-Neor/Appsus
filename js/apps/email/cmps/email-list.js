@@ -1,11 +1,16 @@
 import emailPreview from "./email-preview.js";
 import { emailService } from "../services/email-service.js";
+import emailFilter from "./email-filter.js";
 export default {
     // props: ['emails'],
     template: `
-      <ul class="email-list clean-list email-children-layout"  v-if="emails">
-          <email-preview  v-for="email in emails" :key="email.id" :email="email" @deleted="removeEmail"/>
+<section class="email-list  email-children-layout" v-if="emails">
+    <email-filter></email-filter>
+<ul class=" clean-list"  >
+          <email-preview  v-for="email in emails" :key="email.id" :email="email" @deleted="removeEmail" @toggleIsRead="togglingIsRead"/>
     </ul>
+</section>
+
      `,
      data(){
          return{
@@ -36,11 +41,16 @@ export default {
                 //     eventBus.$emit('show-msg', msg);
                 // });
         },
+        togglingIsRead(email){
+            emailService.save(email)
+        },
+        
      },
 
 
     components: {
-        emailPreview
+        emailPreview,
+        emailFilter
     },
     created() {
         this.loadEmails();
