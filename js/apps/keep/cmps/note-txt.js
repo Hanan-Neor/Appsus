@@ -1,7 +1,16 @@
 export default {
     props: ['note'],
     template: `
-<section class="note-txt flex column space-between" v-if="note"  >
+<section class="note-txt flex space-between column" v-if="note"  >
+    <div>
+        
+        <h2 v-if="!edit">{{note.label}}</h2>
+        <input v-else v-model="note.label" class="edit-txt" type="text">
+        <span v-if="!edit"><pre>{{note.info.txt}}</pre></span>
+        <input v-else v-model=note.info.txt type="text" class="edit-txt">
+        <button class=btn-save v-if="edit" @click.stop.prevent="updateNote"><i class="far fa-save"></i></button>
+    </div>
+
     <div class="container-btn">
         
         <button class="btn-note" v-if="!edit" @click="remove"><i class="far fa-trash"></i></button>
@@ -11,14 +20,6 @@ export default {
             <input class="color-input" type="color" @input="setColor" v-model="note.style.backgroundColor"/>
          </div>
      </div>
-    <div>
-
-        <h2 v-if="!edit">{{note.label}}</h2>
-        <input v-else v-model="note.label" class="edit-txt" type="text">
-        <span v-if="!edit"><pre>{{note.info.txt}}</pre></span>
-        <input v-else v-model=note.info.txt type="text" class="edit-txt">
-        <button v-if="edit" @click.stop.prevent="updateNote"><i class="far fa-save"></i></button>
-    </div>
 
 
 </section>

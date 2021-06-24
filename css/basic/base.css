@@ -5,6 +5,7 @@
 
 body {
     margin: 0;
+    /* font-family: OpenSans-Regular; */
 }
 
 h1,
@@ -26,7 +27,7 @@ html {
     font-family: OpenSans-Regular;
 }
 
-textarea{
+textarea {
     resize: none;
 }
 

@@ -1,0 +1,10 @@
+.note-img {
+    flex-grow: 1;
+}
+
+.note-img .btn-save {
+    background-color: transparent;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+}
