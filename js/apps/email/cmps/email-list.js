@@ -6,7 +6,10 @@ export default {
     template: `
 <section class="email-list  email-children-layout" v-if="emails" @searchEmail="setFilter">
     <email-filter></email-filter>
-<ul class=" clean-list"  >
+    <header>
+WOW HEADER
+</header>
+<ul class="clean-list"  >
     <email-preview  v-for="email in emails" :key="email.id" :email="email" 
         @deleted="removeEmail" 
           @toggleIsRead="togglingIsRead"/>

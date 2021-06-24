@@ -1,9 +1,12 @@
 .email-preview{
     display: flex;
-    justify-content:space-between ;
+    flex-wrap: wrap;
+
+    /* justify-content:space-between ; */
     /* margin-bottom: 5px; */
     /* padding: 3px; */
     padding:4px;
+    box-shadow:inset 0px -1px 0px 0px rgb(211, 211, 211);
     /* flex-shrink: 1; */
     
 }
@@ -15,38 +18,69 @@ background-color: rgb(243, 243, 234);
 
 
 .read{
-    background-color: beige;
+    /* background-color: beige; */
 font-weight: normal;
 }
 
 .email-preview div:first-child{
-    flex:1;
-}
-
-.email-preview div:nth-child(2){
+    min-width: fit-content;
     flex:2;
 }
 
+.email-preview div:nth-child(2){
+    /* min-width: fit-content; */
+    /* min-width:fit-content; */
+    flex:7;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 60px;
+    
+}
+.email-preview .email-body-inlist{
+    font-weight:normal;
+    color:rgb(168, 167, 167)
+
+}
 .email-preview .date-and-buttons{
+    flex:2;
+    /* min-width: fit-content; */
     text-align: center;
+    /* text-align: right; */
     position: relative;
-    width:20%;
+    width:fit-content;
 }
 
 .email-preview .email-buttons{
+    /* text-align: center; */
     display: flex;
-    width:100%;
-    /* align-content:  center; */
-    justify-content: center;
+    /* width:fit-content; */
+    width:54px;
+    /* justify-content: center; */
     position: absolute;
+    left:50%;
+    /* left:-50%; */
+    /* left:0; */
+    transform: translateX(-50%);
     top:-3px;
     background-color:inherit;
     border-radius: 3rem;
 }
 
 .email-preview .email-buttons button{
+    border:0;
+    border-radius: 3rem;
+    /* text-align: center; */
     cursor: pointer;
     /* padding: 0; */
     height: 27px;
 width:27px
+}
+
+.email-preview .email-buttons button:first-child:hover{
+background-color: lightgray;
+}
+.email-preview .email-buttons button:last-child:hover{
+background-color: rgb(255, 112, 112);
 }

@@ -7,12 +7,14 @@ export default {
         
             <nav>
                 <!-- <router-link to="/email/email-compose"> <button>New +</button></router-link> -->
-                <router-link to="/email/email-compose"> <button>New +</button></router-link>
+                <router-link to="/email/email-compose"> <button>New message</button></router-link>
                 <ul class="clean-list">
                     <router-link to="/email/email-list"><li><span>inbox</span></li></router-link>
-                    <router-link to="/email/bibi"> <li><span>sent</span></li></router-link>
-                    <router-link to=""><li><span>favorites</span></li></router-link>
+                    <router-link to=""> <li><span>read</span></li></router-link>
                     <router-link to=""><li><span>unread</span></li></router-link>
+                    <router-link to=""> <li><span>sent</span></li></router-link>
+                    <router-link to=""> <li><span>sent</span></li></router-link>
+                    <router-link to=""><li><span>favorites</span></li></router-link>
                 </ul>
             </nav>
             <!-- <article> -->

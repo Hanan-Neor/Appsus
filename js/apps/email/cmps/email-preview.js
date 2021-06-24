@@ -8,12 +8,17 @@ export default {
     <!-- <li class="email-preview" v-bind:class="isRead"  v-on:mouseleave="hovering"> -->
     <!-- <li v-bind:class="isRead"> -->
         <div>{{email.from}}</div>
-        <div>{{email.subject}}</div>
+        <div>{{email.subject}} - <span class="email-body-inlist">{{email.body}}</span></div>
         <div class ="date-and-buttons">
                     <div v-show="!hover" v-on:mouseover="leaving" v-on:mouseleave="hovering">{{dateToShow}}</div>
-                    <div  class="email-buttons" v-show="hover">
-                        <button v-on:click.prevent="toggleIsRead">{{envelope}}</button>
-                        <button v-on:click.prevent="deleteReview(email.id)">X</button>
+                    <div v-show="hover" class="email-buttons" >
+                        <!-- <button v-on:click.prevent="toggleIsRead">{{envelops}}</button> -->
+                        <!-- <button v-on:click.prevent="toggleIsRead"><i v-if="hover === true" class="far fa-envelope-open"></i><i v-else class="far fa-envelope-open"></i></button> -->
+                        <button  v-on:click.prevent="toggleIsRead">
+                            <i v-if="isRead2" class="far fa-envelope"></i>
+                            <i v-else class="far fa-envelope-open"></i>
+                        </button>
+                        <button v-on:click.prevent="deleteReview(email.id)"><i class="far fa-trash"></i></button>
                 </div>
         </div>
     </li>
@@ -22,10 +27,18 @@ export default {
           data(){
               return{
                 hover:false,
-                envelope:'✉',
+                // envelope:'✉',
               }
           },
     computed:{
+        isRead2(){
+            if(this.email.isRead) return true
+            else return false
+        },
+        // envelops(){
+        //     if (this.email.isRead) return  '✉';
+        //     else return '📨'
+        // },
         dateToShow(){
            return new Date(+this.email.sentAt).toLocaleDateString()
         //    return new Date(+this.email.sentAt).toLocaleString()
@@ -33,7 +46,6 @@ export default {
         isRead(){
             return{
                 read:this.email.isRead,
-               
             }
         }
     },

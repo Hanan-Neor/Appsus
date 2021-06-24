@@ -16,6 +16,11 @@
 width: 230px;
 }
 
+.email-app nav button{
+    width:100%;
+    padding: 1rem;
+}
+
 .email-app nav ul li:hover{
 background-color: rgb(250, 250, 250);
 }
@@ -29,8 +34,52 @@ padding-left: 0.8rem;
 
 .email-children-layout{
     width:100%;
-    background-color: rgb(191, 223, 224);
+    background-color: rgb(254, 255, 255);
     
     /* flex: 7; */
 }
+
+
+
+
+@media (max-width: 601px) {
+    .email-app nav {
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        flex-direction: column;
+        border-inline-start: 1px solid #ccc;
+        background-color: #fff;
+        background-color: rgb(255 255 255 / 90%);
+        width: 200px;
+        transform: translateX(100%);
+        transition: transform .6s;
+    }
+
+}
+
+@media (max-width: 400px) {
+    .email-preview div:nth-child(2){
+            order:1;
+    }
+}
+
+    
+    /* body.menu-open .main-nav {
+        transform: translateX(0);
+    }
+
+    .main-header .main-nav>*:not(:last-child) {
+        margin-inline-end: 0;
+    }
+    .main-header .main-nav a {
+        display: block;
+        padding: 1rem 0;
+        text-align: center;
+        border-bottom: 1px solid #ccc;
+    }
+    .main-header .main-nav a:hover {
+        background-color: #f3f3f3;
+    } */
 

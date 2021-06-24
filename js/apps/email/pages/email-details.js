@@ -3,12 +3,16 @@ import { emailService } from "../services/email-service.js";
 export default {
     template: `
         <section class="email-details email-children-layout" v-if="email">
-       <div><h1>{{email.subject}}</h1></div>
-       <div class="flex space-between">
-           <div>{{email.from}}</div>
+        <header>
+WOW HEADER
+</header>
+       <div class="subject"><h1>{{email.subject}}</h1></div>
+       <hr>
+       <div class="from-date flex space-between">
+           <div><span style="color:rgb(168, 167, 167)">from:</span> <b>{{email.from}}</b></div>
            <div>{{dateToShow}}</div>
        </div>
-       <div><pre>{{email.body}}</pre></div>
+       <div class="body"><pre>{{email.body}}</pre></div>
        <!-- <div>{{email.body}}</div> -->
     </section>
     `,
@@ -33,8 +37,8 @@ export default {
     },
     computed: {
         dateToShow(){
-            return new Date(+this.email.sentAt).toLocaleDateString()
-         //    return new Date(+this.email.sentAt).toLocaleString()
+            // return new Date(+this.email.sentAt).toLocaleDateString()
+            return new Date(+this.email.sentAt).toLocaleString()
          }
 
     },
