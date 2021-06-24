@@ -32,11 +32,12 @@ function _creatNotes() {
                         id: 'n101',
                         type: "noteTxt",
                         isPinned: true,
+                        label: "Welcome!",
                         info: {
-                            txt: "Fullstack !"
+                            txt: " Here you can write and edit anything you want "
                         },
                         style: {
-                            backgroundColor: "#b31414"
+                            backgroundColor: "#ffd700"
                         }
 
                     },
@@ -56,18 +57,19 @@ function _creatNotes() {
                     //         txt: "Fullstack hhhh!"
                     //     }
                     // },
-                    // {
-                    //     id: 'n102',
-                    //     type: "noteImg",
-                    //     isPinned: true,
-                    //     info: {
-                    //         url: "https://dalicanvas.co.il/wp-content/uploads/2020/02/%D7%A9%D7%A7%D7%99%D7%A2%D7%94-%D7%A7%D7%9C%D7%90%D7%A1%D7%99%D7%AA-1.jpg",
-                    //         title: "Me playing Mi"
-                    //     },
-                    //     style: {
-                    //         backgroundColor: "#00d"
-                    //     }
-                    // },
+                    {
+                        id: 'n102',
+                        type: "noteImg",
+                        isPinned: true,
+                        label: "My - Picture",
+                        info: {
+                            url: "https://dalicanvas.co.il/wp-content/uploads/2020/02/%D7%A9%D7%A7%D7%99%D7%A2%D7%94-%D7%A7%D7%9C%D7%90%D7%A1%D7%99%D7%AA-1.jpg",
+                            title: ""
+                        },
+                        style: {
+                            backgroundColor: "#00d"
+                        }
+                    },
                     // {
                     //     id: 'n103',
                     //     type: "noteTodos",

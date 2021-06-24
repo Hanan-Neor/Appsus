@@ -1,15 +1,16 @@
 export default {
     template: `
-    <section class="add-noteTxt">
-                <h2>Add Note:</h2>
+    <section class="add-noteTxt ">
+                <!-- <h2>Add Note:</h2> -->
                 <div>
-                    <label for="title">Title:
-                        <input name="title" v-model="note.label" @blur="add" type="text" placeholder="Enter Title"> 
+                    <label for="title">
+                        <input name="title" v-model="note.label" @blur="add" type="text" placeholder="Title" class="input-title"> 
                         <!-- <button title="Pin" @click="pin">📍</button> -->
                     </label>
                 </div>
-                <textarea name="note" v-model="note.info.txt" @blur="add" placeholder="New note" rows="6" cols="50">
-                </textarea> 
+                <textarea name="note" v-model="note.info.txt" @blur="add" placeholder="Take a note..." rows="6" cols="50">
+                    </textarea> 
+                    <!-- <button title="Add" @click="addNote"><i class="far fa-save"></i></button> -->
     </section>
     `,
 

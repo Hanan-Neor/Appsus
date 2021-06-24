@@ -1,23 +1,24 @@
 import addNoteTxt from './add-noteTxt.js'
+// import addNoteImg from './add-noteTxt.js'
 
 
 export default {
     // props: ['note'],
     template: `
-     <section class="add-note">
-       <h1>Add note</h1>
+     <section class="add-note ">
+       <!-- <h1>Add note</h1> -->
          <div class="add-note-input" v-if="isShow" @click="isShow=false" >
-             <button @click="txt">Text</button>
+             <!-- <button @click="txt">Text</button> -->
              <!-- <button @click="img">Img</button>
              <button @click="video">Video</button>
              <button @click="todos">TO-Do</button> -->
-             <input type="text" placeholder="Enter text">
+             <input type="text" placeholder="Take a note..">
         </div>
 
 
              <div v-else >
                 <component :is="noteType" @add="editNote"/>
-                <div>
+                <div class="btn-add-note">
                     <!-- <button v-if='isStyling' @click='color'>🎨</button>
                     <input v-else v-model="bgcStyle" @change="color" type="color"> -->
                         <!-- <button @click="img">img</button>

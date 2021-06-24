@@ -2,7 +2,7 @@ import noteTxt from './note-txt.js'
 import noteImg from './note-img.js'
 
 // import noteToDos from './note-todos.js'
-import noteVideo from './note-video.js'
+// import noteVideo from './note-video.js'
 
 
 
@@ -53,7 +53,7 @@ export default {
         noteTxt,
         noteImg,
         // noteToDos,
-        noteVideo,
+        // noteVideo,
     }
 
 
