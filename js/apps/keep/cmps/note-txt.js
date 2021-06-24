@@ -3,9 +3,9 @@ export default {
     template: `
 <section class="note-txt" :style="'background-color:' + bgcStyle">
     <h2>{{note.label}}</h2>
-    <span>{{note.info.txt}}</span>
-    <button @click="remove">🗑</button>
-    <button @click="edit">🗑</button>
+    <span><pre>{{note.info.txt}}</pre></span>
+    <button @click="remove"><i class="far fa-trash"></i></button>
+    <button @click="edit"><i class="far fa-edit"></i></button>
 </section>
 `,
 

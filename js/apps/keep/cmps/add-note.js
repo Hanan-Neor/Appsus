@@ -23,7 +23,7 @@ export default {
                         <!-- <button @click="img">img</button>
                         <button @click="todos">ToDo</button> -->
                         <button @click="txt">Text</button>
-                        <button title="Add" @click="addNote">➕</button>
+                        <button title="Add" @click="addNote"><i class="far fa-save"></i></button>
                 </div>
              </div>
            <!-- <form @submit.prevent="addNote"> -->
