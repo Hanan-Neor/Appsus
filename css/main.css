@@ -15,27 +15,7 @@
 
 @import '../css/apps/email/pages/email-app.css';
 
-/* @import '/css/apps/email/pages/email-details.css';
-
-@import '/css/apps/email/cmps/email-compose.css';
-@import '/css/apps/email/cmps/email-list.css';
-@import '/css/apps/email/cmps/email-preview.css'; */
-
 
 /* KEEP */
 
-
-/* @import '/css/apps/keep/pages/keep-app.css';
-@import '/css/apps/keep/pages/keep-details.css';
-@import '/css/apps/keep/cmps/keep-compose.css';
-@import '/css/apps/keep/cmps/keep-list.css';
-@import '/css/apps/keep/cmps/keep-preview.css'; */
-
 @import '../css/apps/keep/pages/keep-app.css';
-@import '../css/apps/keep/pages/keep-details.css';
-@import '../css/apps/keep/cmps/keep-compose.css';
-@import '../css/apps/keep/cmps/add-note.css';
-@import '../css/apps/keep/cmps/keep-list.css';
-@import '../css/apps/keep/cmps/keep-preview.css';
-
-/* >>>>>>>e12a1386dfc2f8a7b5ceac8d9dc3480f3c02b4bc */
