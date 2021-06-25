@@ -1,4 +1,4 @@
-import { utilService } from '../../../services/util-service.js';
+// import { utilService } from '../../../services/util-service.js';
 import { storageService } from '../../../services/async-storage-service.js'
 import addNote from '../cmps/add-note.js';
 const NOTES_KEY = 'notesBD'
@@ -68,6 +68,18 @@ function _creatNotes() {
                         },
                         style: {
                             backgroundColor: "#00d"
+                        }
+                    },
+                    {
+                        id: 'n103',
+                        type: "noteVideo",
+                        isPinned: false,
+                        info: {
+                            url: "https://www.youtube.com/watch?v=c-I5S_zTwAc",
+                            title: "youtube video"
+                        },
+                        style: {
+                            backgroundColor: "#cbf0f8"
                         }
                     },
                     // {

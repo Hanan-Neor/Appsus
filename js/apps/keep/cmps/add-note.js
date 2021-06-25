@@ -1,5 +1,6 @@
 import addNoteTxt from './add-noteTxt.js'
 import addNoteImg from './add-noteImg.js'
+import addNoteVideo from './add-note-video.js'
 // import noteImg from './note-img.js'
 
 
@@ -12,8 +13,8 @@ export default {
              <button @click="txt"><i class="fas fa-text"></i></button>
               <button @click="img"><i class="fas fa-image"></i></button>
               <!-- <button @click="img"><input class="input-img" type="file" ref="file" @change=chosenImg><i class="fas fa-image"></i></button> -->
-             <!-- <button @click="video"><i class="fas fa-video"></i></button>
-             <button @click="todos">TO-Do</button> --> 
+              <button @click="video"><i class="fab fa-youtube"></i></button>
+             <!-- <button @click="todos">TO-Do</button>  -->
              <input type="text" placeholder="Take a note..">
         </div>
 
@@ -67,6 +68,9 @@ export default {
         img() {
             this.noteType = 'add-noteImg'
         },
+        video() {
+            this.noteType = 'add-noteVideo'
+        },
 
         // todos(){
         //     this.noteType = 'add-noteTodos'
@@ -93,6 +97,7 @@ export default {
     components: {
         addNoteTxt,
         addNoteImg,
+        addNoteVideo
         // noteImg
         // addNoteTodos,
     },

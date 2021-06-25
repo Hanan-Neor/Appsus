@@ -1,6 +1,7 @@
 import { keepService } from '../services/keep-service.js';
 import keepList from '../cmps/keep-list.js'
 import addNote from '../cmps/add-note.js'
+import keepFilter from '../cmps/keep-filter.js'
 // import keepPreview from '../cmps/keep-preview.js'
 import { eventBus } from '../../../services/event-bus-service.js'
 
@@ -8,8 +9,8 @@ export default {
     name: 'keep-app',
     template: `
     <section class="keep-app">
-       <h1>Keep-Page</h1> 
        <add-note @addNote="creatNote" />
+       <keep-filter @filtered="setFilter"/>
        <!-- <keep-details v-if/> -->
         <keep-list v-if="notes" :notes="notes" @remove="remove" @update="updateNote" @change="updateColor" />
         <!-- @changeImg="updateImg -->
@@ -20,6 +21,7 @@ export default {
     data() {
         return {
             notes: [],
+            filterBy: null
         }
     },
 
@@ -73,6 +75,9 @@ export default {
             keepService.update(data).then(() => {
                 this.loadnotes()
             })
+        },
+        setFilter(filterBy) {
+            this.filterBy = filterBy
         }
 
     },
@@ -85,13 +90,23 @@ export default {
     },
 
     computed: {
+        // notesToShow() {
+        //     if (!this.filterBy) return this.notes;
+        //     console.log(filterBy)
+        //         // const searchStr = this.filterBy..toLowerCase();
+        //     const notesToShow = this.notes.filter(note => {
+        //         return note..toLowerCase().includes(searchStr);
+        //     });
+        //     return notesToShow;
+        // }
 
 
     },
     components: {
         keepList,
         addNote,
-        eventBus
+        eventBus,
+        keepFilter
     }
 
 

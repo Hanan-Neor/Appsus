@@ -6,16 +6,18 @@
         /* align-items: center; */
         font-family: OpenSans-Bold;
         margin-left: 5px;
+        background-color: unset;
     }
     
     .add-note-input {
         /* text-align: center; */
-        border: 1px solid black;
+        border: 1px solid rgb(80, 74, 74);
+        border-radius: 10px;
         /* border-radius: 10px; */
         /* border-radius: 5px; */
         /* box-shadow: ; */
-        -webkit-box-shadow: 1px 2px 10px 2px rgba(0, 0, 0, 0.45);
-        box-shadow: 1px 2px 10px 2px rgba(0, 0, 0, 0.45);
+        -webkit-box-shadow: 1px 2px 10px 2px rgba(49, 47, 47, 0.45);
+        box-shadow: 1px 2px 10px 2px rgba(78, 78, 78, 0.45);
         /* align-items: center; */
         /* border-radius: 10px; */
         width: 60vw;
@@ -64,6 +66,10 @@
         position: absolute;
         opacity: 0;
         width: 10px
+    }
+    
+    .add-note {
+        margin: 15px 0 10px 0;
     }
     /* .note {
     height: 100%;

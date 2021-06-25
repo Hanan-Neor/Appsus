@@ -12,3 +12,11 @@
 .add-noteImg .input-title {
     margin-bottom: 15px;
 }
+
+.add-noteImg textarea {
+    background-color: unset;
+}
+
+.add-noteImg input {
+    background-color: unset;
+}
