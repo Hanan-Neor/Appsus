@@ -7,7 +7,7 @@ export default {
         
             <nav>
                 <!-- <router-link to="/email/email-compose"> <button>New +</button></router-link> -->
-                <router-link to="/email/email-compose"> <button>New message</button></router-link>
+                <div><router-link to="/email/email-compose"> <button>New message</button></router-link></div>
                 <ul class="clean-list">
                     <router-link to="/email/email-list"><li><span>inbox</span></li></router-link>
                     <router-link to=""> <li><span>read</span></li></router-link>

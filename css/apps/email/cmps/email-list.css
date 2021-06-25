@@ -3,10 +3,6 @@
     position: relative;
 }
 
-.email-list .search-input{
-    position: absolute;
-    top: -6.5vh;
-}
 
 .email-list ul{
 }

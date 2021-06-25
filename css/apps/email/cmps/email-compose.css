@@ -1,11 +1,32 @@
 .email-compose{
 
     flex-direction: column;
+    
 }
+
+.email-compose header{
+    background-color: rgb(45, 54, 65);
+    color: white;
+    padding: 0.5rem 1rem;
+}
+
+
+.email-compose form span{
+    display: inline-block;
+    width: 5rem;
+    font-weight: bold;
+}
+/* .email-compose label{
+    display: inline-block;
+    width: 4rem;
+} */
 
 
 .email-compose input{
     width:100%;
+    font-size: 1rem;
+    height: 2rem;
+    border-radius: 0.3rem;
 }
 .email-compose main{
     /* display: flex;
@@ -20,6 +41,10 @@ flex:1
     height:95%;
     display:flex;
     flex-direction: column;
+    gap: 0.3rem;
+    padding: 0.5rem 1rem;
+
+    
 }
 
 
@@ -29,8 +54,23 @@ flex:1
     /* resize: none; */
     width:100%;
     height:100%;
+    border:2px solid black;
+    border-radius: 0.3rem;
+    padding: 0.3rem;
   }
 
-.email-compose footer button {
+.email-compose .send-container button {
 display: inline-block;
+padding: 0.7rem;
+font-size: 1rem;
+background-color: rgb(152, 193, 233);
+border-radius: 0.4rem;
+
+}
+
+.email-compose .send-container{
+    /* background-color: maroon; */
+    padding: 1rem;
+padding-top: 0;
+
 }

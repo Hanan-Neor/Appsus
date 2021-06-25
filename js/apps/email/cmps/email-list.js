@@ -4,11 +4,9 @@ import emailFilter from "./email-filter.js";
 export default {
     // props: ['emails'],
     template: `
-<section class="email-list  email-children-layout" v-if="emails" @searchEmail="setFilter">
-    <email-filter></email-filter>
-    <header>
-WOW HEADER
-</header>
+<section class="email-list  email-children-layout" v-if="emails">
+        <email-filter  @searchEmail="loadEmails"
+                        @filterState="filterByStatus"></email-filter>
 <ul class="clean-list"  >
     <email-preview  v-for="email in emails" :key="email.id" :email="email" 
         @deleted="removeEmail" 
@@ -20,14 +18,34 @@ WOW HEADER
      data(){
          return{
              emails:null,
-             filterBy:'',
+             viewStatus:null,
          }
      },
      methods:{
-        loadEmails() {
-            emailService.query()
+        loadEmails(filterBy) {
+            emailService.filter(filterBy)
             .then((emails) => {this.emails = emails})
         },
+
+        filterByStatus(status){
+            // this.viewStatus = status;
+            emailService.query()
+                .then(emails => {
+                    if (status === null) {
+                        this.emails = emails;
+                        return}
+                    this.emails = emails.filter(email => {
+                        return email.isRead === status;
+                    })
+                })
+        },
+        togglingIsRead(email){
+            // this.viewStatus = email.isRead;
+            emailService.save(email);
+            // this.filterByStatus(this.viewStatus);
+
+        },
+
         removeEmail(id) {
             emailService.remove(id)
                 .then(() => {
@@ -47,24 +65,10 @@ WOW HEADER
                 //     eventBus.$emit('show-msg', msg);
                 // });
         },
-        togglingIsRead(email){
-            emailService.save(email)
-        },
-        setFilter(filterBy) {
-            this.filterBy = filterBy;
-        }
         
      },
      computed: {
-        emailsToShow() {
-            // return this.books
-            if (!this.filterBy) return this.emails;
-            const searchStr = this.filterBy.toLowerCase();
-            const emailsToShow = this.emails.filter(email => {
-                return email.from.toLowerCase().includes(searchStr);
-            });
-            return emailsToShow;
-        },
+
     },
 
 
@@ -74,8 +78,6 @@ WOW HEADER
     },
     created() {
         this.loadEmails();
-        // emailService.query()
-        //     .then((emails) => {this.emails = emails})
 
     },
 

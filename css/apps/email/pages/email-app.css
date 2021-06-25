@@ -2,7 +2,11 @@
 @import '../cmps/email-compose.css';
 @import '../cmps/email-list.css';
 @import '../cmps/email-preview.css';
+@import '../cmps/email-filter.css';
 
+*:focus {
+    outline:none;
+}
 
 
 .email-app{
@@ -15,10 +19,22 @@
 .email-app nav ul{
 width: 230px;
 }
+.email-app nav div:first-child{
+text-align: center;
+}
+
 
 .email-app nav button{
-    width:100%;
-    padding: 1rem;
+    width:90%;
+    padding: 0.7rem;
+    font-size: 1rem;
+    background-color: rgb(152, 193, 233);
+    border-radius: 0.4rem;
+}
+
+.email-app nav li {
+    padding:4px;
+
 }
 
 .email-app nav ul li:hover{
