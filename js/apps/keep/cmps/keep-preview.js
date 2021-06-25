@@ -1,5 +1,5 @@
 import noteTxt from './note-txt.js'
-import noteImg from './note-img.js'
+import noteImg from './/note-img.js'
 
 // import noteToDos from './note-todos.js'
 // import noteVideo from './note-video.js'
@@ -17,14 +17,16 @@ export default {
          class="note-content "
           @remove="remove"  
           @update="update"
-          @change="changeColor"/>
-       <!-- <button @click="remove(currNote.id)">X</button> -->
-       <!-- :info="note.info" -->
-       <!-- <button @click="remove"><i class="far fa-trash"></i></button>
-    <button @click="edit"><i class="far fa-edit"></i></button> -->
-    </section>
-    
-    `,
+          @change="changeColor"
+          />
+          <!-- <button @click="remove(currNote.id)">X</button> -->
+          <!-- :info="note.info" -->
+          <!-- <button @click="remove"><i class="far fa-trash"></i></button>
+          <button @click="edit"><i class="far fa-edit"></i></button> -->
+        </section>
+        
+        `,
+    // @updateImg="changeImg"
 
 
     // data(){
@@ -43,7 +45,10 @@ export default {
         },
         changeColor(updateNoteColor) {
             this.$emit('change', updateNoteColor)
-        }
+        },
+        // changeImg(updatImg) {
+        //     this.$emit('changeImg', updatImg)
+        // }
         // emitRemove(noteId) {
         //     this.$emit('remove', noteId)
         // },

@@ -2,6 +2,7 @@ import { keepService } from '../services/keep-service.js';
 import keepList from '../cmps/keep-list.js'
 import addNote from '../cmps/add-note.js'
 // import keepPreview from '../cmps/keep-preview.js'
+import { eventBus } from '../../../services/event-bus-service.js'
 
 export default {
     name: 'keep-app',
@@ -10,7 +11,8 @@ export default {
        <h1>Keep-Page</h1> 
        <add-note @addNote="creatNote" />
        <!-- <keep-details v-if/> -->
-        <keep-list v-if="notes" :notes="notes" @remove="remove" @update="updateNote" @change="updateColor"/>
+        <keep-list v-if="notes" :notes="notes" @remove="remove" @update="updateNote" @change="updateColor" />
+        <!-- @changeImg="updateImg -->
         </section>
     </section>
     `,
@@ -24,11 +26,15 @@ export default {
     created() {
         this.loadNotes();
         console.log(this.notes)
-            // keepService.query()
-            //     .then(notes => {
-            //         this.notes = notes
-            //         console.log(notes);
-            //     })
+        eventBus.$on('updateImg', (data) => {
+            console.log(data)
+            changeImg(data)
+        });
+        // keepService.query()
+        //     .then(notes => {
+        //         this.notes = notes
+        //         console.log(notes);
+        //     })
     },
 
 
@@ -61,10 +67,21 @@ export default {
             keepService.update(updateNoteColor).then(() => {
                 // this.loadnotes()
             })
+        },
 
-
+        changeImg(data) {
+            keepService.update(data).then(() => {
+                this.loadnotes()
+            })
         }
 
+    },
+
+    // created() {
+    //     eventBus.$on('', this.showMsg);
+    // },
+    destroyed() {
+        eventBus.$off('updateImg');
     },
 
     computed: {
@@ -73,7 +90,8 @@ export default {
     },
     components: {
         keepList,
-        addNote
+        addNote,
+        eventBus
     }
 
 

@@ -1,54 +1,41 @@
 import addNoteTxt from './add-noteTxt.js'
-// import addNoteImg from './add-noteTxt.js'
+import addNoteImg from './add-noteImg.js'
+// import noteImg from './note-img.js'
+
 
 
 export default {
     // props: ['note'],
     template: `
      <section class="add-note ">
-       <!-- <h1>Add note</h1> -->
-         <div class="add-note-input" v-if="isShow" @click="isShow=false" >
-             <!-- <button @click="txt">Text</button> -->
-             <!-- <button @click="img">Img</button>
-             <button @click="video">Video</button>
-             <button @click="todos">TO-Do</button> -->
+         <div class="add-note-input" v-if="isOpen" @click="isOpen=false" >
+             <button @click="txt"><i class="fas fa-text"></i></button>
+              <button @click="img"><i class="fas fa-image"></i></button>
+              <!-- <button @click="img"><input class="input-img" type="file" ref="file" @change=chosenImg><i class="fas fa-image"></i></button> -->
+             <!-- <button @click="video"><i class="fas fa-video"></i></button>
+             <button @click="todos">TO-Do</button> --> 
              <input type="text" placeholder="Take a note..">
         </div>
 
 
              <div v-else >
-                <component :is="noteType" @add="editNote"/>
+                <component :is="noteType" @add="editTypeNote"/>
                 <div class="btn-add-note">
-                    <!-- <button v-if='isStyling' @click='color'>🎨</button>
+                    <!-- <button v-if='isStyling' @click='color'></button>
                     <input v-else v-model="bgcStyle" @change="color" type="color"> -->
-                        <!-- <button @click="img">img</button>
-                        <button @click="todos">ToDo</button> -->
+                        <!-- <button @click="img"><i class="fas fa-image"></i></button> -->
+                        <!-- <button @click="todos">ToDo</button> -->
                         <!-- <button @click="txt">Text</button> -->
                         <button title="Add" @click="addNote"><i class="far fa-save"></i></button>
                 </div>
              </div>
-           <!-- <form @submit.prevent="addNote"> -->
-               <!-- <input type="text" v-model="val" placeholder="Enter your text"> -->
-               <!-- < type="text" v-model="val" placeholder="Enter your text"> -->
-               <!-- <textarea  autofocus  v-model="val" placeholder="Enter your text" ></textarea>
-               <button></button>
-           </form>
-            <button @click="setType('noteTxt')">T</button>
-            <button @click="setType('noteImg')"></button> -->
-            <!-- <button @click="setType('noteTodos')">+</button> -->
-            <!-- <button @click="setType('noteVideo')">+</button> -->
-           
-<!-- <select v-modal="noteType">
-<option value="textNote"></option>
-</select>
-<button @click="addNote">Add</button> -->
-</section>
+       </section>
 `,
 
     data() {
         return {
             note: null,
-            isShow: true,
+            isOpen: true,
             isStyling: true,
             bgcStyle: null,
             noteType: 'add-noteTxt',
@@ -63,43 +50,23 @@ export default {
 
     methods: {
 
+        chosenImg() {
+            console.log('chooose')
+        },
+
         addNote() {
             const color = this.bgcStyle
             const newNote = { note: this.note, color }
                 // notesService.addNote(this.note,color)
             this.$emit('addNote', newNote)
-            this.isShow = true
+            this.isOpen = true
 
         },
 
-        // addNote() {
-        //     const newNote = {
 
-        //         type: this.type,
-        //         isPinned: false,
-        //         info: {
-        //             txt: this.val
-        //         },
-        //         style: {
-        //             backgroundColor: "#F6B6B4"
-        //         }
-
-        //     };
-        //     this.$emit('addNote', newNote)
-
-        //     this.val = '';
-
-        // const newNote = keepService.getEmptyNote()
-
-
-        // setType(type) {
-        //     this.type = type;
-        // },
-
-
-        // img(){
-        //     this.noteType = 'add-noteImg'
-        // },
+        img() {
+            this.noteType = 'add-noteImg'
+        },
 
         // todos(){
         //     this.noteType = 'add-noteTodos'
@@ -112,8 +79,11 @@ export default {
         txt() {
             this.noteType = 'add-noteTxt'
         },
-        editNote(note) {
-            this.note = note;
+
+
+        editTypeNote(newTypENot) {
+            this.note = newTypENot;
+            console.log(this.note)
         },
 
 
@@ -122,7 +92,8 @@ export default {
 
     components: {
         addNoteTxt,
-        // addNoteImg,
+        addNoteImg,
+        // noteImg
         // addNoteTodos,
     },
 }

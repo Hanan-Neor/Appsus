@@ -9,6 +9,7 @@ export default {
             <li v-for="note in notes" :key="note.id" class="note clean-list" :style="{ 'background-color' : note.style.backgroundColor }"  >
             <!-- :style="{ 'background-color' : note.style.backgroundColor }" --> 
                 <keep-preview :note="note" @remove="remove" @update="updateNote" @change="changeColor"/>
+                <!-- @changeImg="changeImg -->
             </li>
         </ul>
 
@@ -25,7 +26,11 @@ export default {
         },
         changeColor(noteUpdateColor) {
             this.$emit('change', noteUpdateColor)
-        }
+        },
+        // changeImg(updateImg) {
+        //     this.$emit('changeImg', updateImg)
+
+        // }
         // emitRemove(noteId) {
         //     this.$emit('remove', noteId)
         // },

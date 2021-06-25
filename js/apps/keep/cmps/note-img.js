@@ -1,5 +1,8 @@
+// import { eventBus } from "../../../services/event-bus-service.js";
+
 export default {
     props: ['note'],
+    name: 'notImg',
     template: `
 <section class="note-img flex space-between column" v-if="note"  >
     <div>
@@ -7,7 +10,8 @@ export default {
         <h2 v-if="!edit">{{note.label}}</h2>
         <input v-else v-model="note.label" class="edit-txt" type="text">
         <img class="note-img"  width=100% :src="note.info.url">
-        <input type="file" class="file-input btn" name="image" @input="changeImg(event)"/>
+        <!-- <input v-if="edit" type="file"  ref="myFiles" class="file-input btn" @change=chosenImg /> -->
+        <!-- @change="changeImg -->
         <!-- onchange="onImgInput(event) -->
         <!-- <input v-if="edit" type="image" v-model=note.info.url src="note.info.url" alt="Submit" width="48" height="48"> -->
         <!-- <input v-if="edit"  v-model=note.info.url type="imageOrientation: " class="edit-txt"> -->
@@ -15,30 +19,65 @@ export default {
     </div>
 
     <div class="container-btn">
-        
+        <!-- <p>  {{imgUrl}}</p> -->
         <button class="btn-note" v-if="!edit" @click="remove"><i class="far fa-trash"></i></button>
-        <button  class="btn-note" v-if="!edit" @click="editOn"><i class="far fa-edit"></i></button>
+        <!-- <button  class="btn-note" v-if="!edit" @click="editOn"><i class="far fa-edit"></i></button> -->
         <div class="color">
             <div v-if="!edit" class="color-palete"><i class="fas fa-palette"></i></div> 
             <input class="color-input" type="color" @input="setColor" v-model="note.style.backgroundColor"/>
+          
          </div>
      </div>
+     <!-- <input type="file" ref="file"  @change="filePicked"/> -->
 
+
+     <!-- <input type="file" id="file" ref="myFiles" class="custom-file-input" 
+  @change="previewFiles" multiple> -->
 
 </section>
 `,
+
+
 
     data() {
         return {
             // note: this.note,
             // bgcStyle: this.note.style.backgroundColor || '#FFFFE0',
-            edit: false
+            edit: false,
+
         }
     },
 
 
 
     methods: {
+
+        chosenImg() {
+            const file = event.target.files[0]
+            const fileReader = new FileReader()
+
+            fileReader.onload = () => {
+                this.note.info.url = fileReader.result
+                this.reportVal()
+            }
+
+            fileReader.readAsDataURL(file)
+            console.log(file.name)
+            this.note.info.url = file.name
+            console.log(this.note.info.url)
+            console.log(this.note)
+            eventBus.$emit('updateImg', this.note)
+                // this.$emit('updateImg', this.note)
+
+
+        },
+
+
+        previewFiles() {
+            this.files = this.$refs.myFiles.files
+            console.log(this.files)
+            console.log(this.files.name)
+        },
         remove() {
             this.$emit('remove', this.note.id)
         },
@@ -54,14 +93,29 @@ export default {
             console.log(this.note)
             this.$emit('change', this.note)
         },
-        changeImg(event) {
-            console.log(event)
-            this.$emit('updateImg')
-        }
+        // changeImg(event) {
+        //     console.log(event)
+        //     this.$emit('updateImg')
+        // }
 
 
 
     },
+
+    computed: {
+        // imgUrl() {
+        //     const url = this.files.name
+        //     console.log(url)
+        //     return url
+
+        // }
+
+    },
+    componante: {
+        // eventBus
+    }
+
+
 };
 
 

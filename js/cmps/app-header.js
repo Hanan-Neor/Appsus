@@ -7,7 +7,8 @@ export default {
                 <router-link to="/email/email-list">Email</router-link>
                 <router-link to="/keep">Keep</router-link>
                 <router-link to="/book">Book</router-link>
-        </nav>   
+        </nav> 
+        <!-- <hr />   -->
     </header>
     `,
     components: {}
