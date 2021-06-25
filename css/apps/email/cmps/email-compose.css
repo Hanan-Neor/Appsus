@@ -63,8 +63,11 @@ flex:1
 display: inline-block;
 padding: 0.7rem;
 font-size: 1rem;
-background-color: rgb(152, 193, 233);
+background-color: rgb(85, 165, 214);
+
 border-radius: 0.4rem;
+color: white;
+    font-family: OpenSans-Bold;
 
 }
 

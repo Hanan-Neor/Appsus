@@ -1,4 +1,7 @@
 .app-header {
     height: 10vh;
-    background-color: lightsteelblue;
+    background-color: rgb(62, 115, 149);
+    color: rgb(250, 250, 250);
+    padding: 1rem;
+    font-family: OpenSans-Bold;
 }

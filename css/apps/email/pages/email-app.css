@@ -14,6 +14,7 @@
 }
 
 .email-app nav{
+    padding:0.2rem;
 /* padding: 0 2rem; */
 }
 .email-app nav ul{
@@ -28,8 +29,12 @@ text-align: center;
     width:90%;
     padding: 0.7rem;
     font-size: 1rem;
-    background-color: rgb(152, 193, 233);
+    background-color: rgb(85, 165, 214);
+
     border-radius: 0.4rem;
+    color: white;
+    font-family: OpenSans-Bold;
+
 }
 
 .email-app nav li {
