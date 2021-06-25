@@ -66,10 +66,13 @@ font-size: 1rem;
 background-color: rgb(85, 165, 214);
 
 border-radius: 0.4rem;
-color: white;
     font-family: OpenSans-Bold;
 
 }
+.email-compose .send-container button:first-child {
+color: white;
+}
+
 
 .email-compose .send-container{
     /* background-color: maroon; */

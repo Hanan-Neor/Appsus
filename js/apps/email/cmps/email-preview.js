@@ -18,7 +18,7 @@ export default {
                             <i v-if="isRead2" class="far fa-envelope"></i>
                             <i v-else class="far fa-envelope-open"></i>
                         </button>
-                        <button v-on:click.prevent="deleteReview(email.id)"><i class="far fa-trash"></i></button>
+                        <button v-on:click.prevent="deleteEmail(email.id)"><i class="far fa-trash"></i></button>
                 </div>
         </div>
     </li>
@@ -61,7 +61,7 @@ export default {
             this.$emit('toggleIsRead', this.email);
 
         },
-        deleteReview(emailId){
+        deleteEmail(emailId){
             this.$emit('deleted', emailId);
         }
     },

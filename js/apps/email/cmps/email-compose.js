@@ -1,4 +1,5 @@
 import { emailService } from "../services/email-service.js";
+import { eventBus } from "../../../services/event-bus-service.js";
 export default {
     template: `
     <section class="email-compose email-children-layout flex">
@@ -11,9 +12,10 @@ New message
        <div class="flex align-center"><span>Subject: </span><input type="text" v-model="subject"></div>
        <!-- <div><label>To:</label> <input type="email" v-model="to"></div>
        <div><label>Subject:</label> <input type="text" v-model="subject"></div> -->
-       <div class="teaxarea-container"><textarea v-model="body"></textarea></div>
+       <div class="teaxarea-container"><textarea v-model="body" @click="checking"></textarea></div>
     </form>
 </main>
+{{to}}
 <div class="send-container">
     <button @click="onSubmitEmail">Send</button>
     <button style="background-color:initial" @click="onTrashClick"><i class="far fa-trash"></i></button> 
@@ -24,8 +26,8 @@ New message
      data(){
          return{
              to:'',
-             subject:'',
-             body:'',
+             subject:null,
+             body:null,
 
          }
      },
@@ -47,8 +49,18 @@ New message
         },
         onTrashClick(){
             this.$router.push('/email/email-list');
-
+        },
+        replying(replyedEmail){
+            this.to = replyedEmail.from;
+            this.subject = 'Re: '+replyedEmail.subject;
+            // this.body = replyedEmail.body;
+            this.body = 'ffffffffffffff';
+            console.log(replyedEmail);
+        },
+        checking(){
+            this.to = 'hhhhhhhhhhhhhh'
         }
+
          
      },
 
@@ -58,7 +70,16 @@ New message
         emailService
     },
     created() {
+        eventBus.$on('reply',(replyedEmail) =>{
+            setTimeout(()=>{
+                this.replying(replyedEmail);
+                console.log(replyedEmail);
 
+            },1000)
+        })
     },
+    // destroyed(){
+    //     eventBus.$off('reply');
+    // }
 
 }

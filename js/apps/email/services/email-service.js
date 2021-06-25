@@ -26,20 +26,17 @@ function filter(emails, filterBy) {
 
 function sort(emails, sortBy) {
     let filteredEmails = emails;
-    console.log(filteredEmails);
     switch (sortBy) {
 
         case 'Newest first':
-            console.log('new');
             filteredEmails.sort((a, b) => {
                 return (b.sentAt - a.sentAt)
             });
             break;
         case 'Oldest first':
 
-            console.log('old');
             filteredEmails.sort((a, b) => {
-                return (b.sentAt - a.sentAt)*(-1)
+                return (a.sentAt - b.sentAt)
             });
             break;
 

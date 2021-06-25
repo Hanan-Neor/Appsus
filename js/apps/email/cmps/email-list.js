@@ -1,6 +1,7 @@
 import emailPreview from "./email-preview.js";
 import { emailService } from "../services/email-service.js";
 import emailFilter from "./email-filter.js";
+import { eventBus } from "../../../services/event-bus-service.js";
 export default {
     // props: ['emails'],
     template: `
@@ -29,7 +30,8 @@ export default {
     methods: {
         sortEmails(sortBy){
                 this.sortBy = sortBy;
-                this.filterByStatus();
+                // console.log(this.viewStatus);
+                this.filterByStatus(this.viewStatus);
         },
         // loadEmails(filterBy) {
         //     emailService.filter(filterBy)
@@ -53,12 +55,11 @@ export default {
                         return !email.isRead
                     }).length;
                     //======================================================
-
+                        // console.log(status);
                     
                     if (status === null) {
                         this.viewStatus = status;
                         this.emails = emailService.filter(emails, this.filterBy);
-                    console.log(this.emails);
 
                         this.emails = emailService.sort(this.emails,this.sortBy);
                         return
@@ -121,6 +122,9 @@ export default {
     created() {
         // this.loadEmails();
         this.filterByStatus(null)
+        eventBus.$on('deleted' , (emailId) =>{
+            this.removeEmail(emailId);
+        })
     },
 
 }
