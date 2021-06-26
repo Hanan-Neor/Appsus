@@ -13,7 +13,6 @@ New message
        <div class="teaxarea-container"><textarea v-model="body"></textarea></div>
     </form>
 </main>
-{{to}}
 <div class="send-container">
     <button @click="onSubmitEmail">Send</button>
     <button style="background-color:initial" @click="onTrashClick"><i class="far fa-trash"></i></button> 
