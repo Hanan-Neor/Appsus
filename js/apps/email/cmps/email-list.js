@@ -97,8 +97,5 @@ export default {
             this.removeEmail(emailId);
         })
     },
-    destroyed() {
-        eventBus.$off('deleted');
-    },
 
 }

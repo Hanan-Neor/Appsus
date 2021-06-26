@@ -6,7 +6,7 @@ export default {
         <nav>
                 <router-link to="/email/email-list">Email</router-link> |
                 <router-link to="/keep">Keep</router-link> |
-                <a href="https://hanan-neor.github.io/miss-books2/">Book</a>
+                <a href="https://hanan-neor.github.io/books-vue/">Book</a>
         </nav> 
     </header>
     `,
