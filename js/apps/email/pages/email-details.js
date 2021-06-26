@@ -17,50 +17,53 @@ export default {
            <div>{{dateToShow}}</div>
        </div>
        <div class="body"><pre>{{email.body}}</pre></div>
-       <!-- <div>{{email.body}}</div> -->
     </section>
     `,
 
     data() {
         return {
-            email:null,
+            email: null,
         }
 
     },
     created() {
         const { emailId } = this.$route.params;
         emailService.getById(emailId)
-        .then(email => {
-            this.email = email;
-            this.email.isRead = true;
-            emailService.save(this.email);
-                                })
+            .then(email => {
+                this.email = email;
+                this.email.isRead = true;
+                emailService.save(this.email);
+            })
     },
     methods: {
-        onBackClick(){
+        onBackClick() {
             this.$router.push('/email/email-list');
-            
+
         },
-        deleteEmail(emailId){
+        deleteEmail(emailId) {
             eventBus.$emit('deleted', emailId)
             this.$router.push('/email/email-list');
-            
+
         },
-        replyToEmail(){
+        replyToEmail() {
             eventBus.$emit('reply', this.email);
-                this.$router.push('/email/email-compose');
+            this.$router.push('/email/email-compose');
         }
     },
     computed: {
-        dateToShow(){
+        dateToShow() {
             // return new Date(+this.email.sentAt).toLocaleDateString()
             return new Date(+this.email.sentAt).toLocaleString()
-         },
-        
+        },
+
     },
     components: {
 
-    }
+    },
+    //     destroyed(){
+    //     eventBus.$off('reply');
+    // }
+
 
 
 };

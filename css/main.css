@@ -19,3 +19,8 @@
 /* KEEP */
 
 @import '../css/apps/keep/pages/keep-app.css';
+
+
+.router-link-exact-active{
+    text-decoration: underline;
+    }
