@@ -1,6 +1,7 @@
 import noteTxt from './note-txt.js'
 import noteImg from './/note-img.js'
 import noteVideo from './/note-video.js'
+import noteToDos from './/note-todos.js'
 
 // import noteToDos from './note-todos.js'
 // import noteVideo from './note-video.js'
@@ -19,6 +20,7 @@ export default {
           @remove="remove"  
           @update="update"
           @change="changeColor"
+          @changeDone="changeDoneNote"
           />
           <!-- <button @click="remove(currNote.id)">X</button> -->
           <!-- :info="note.info" -->
@@ -47,6 +49,10 @@ export default {
         changeColor(updateNoteColor) {
             this.$emit('change', updateNoteColor)
         },
+        changeDoneNote(updateNote) {
+            this.$emit('changeDone', updateNote)
+
+        }
         // changeImg(updatImg) {
         //     this.$emit('changeImg', updatImg)
         // }
@@ -58,7 +64,7 @@ export default {
     components: {
         noteTxt,
         noteImg,
-        // noteToDos,
+        noteToDos,
         noteVideo,
     }
 

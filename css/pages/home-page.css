@@ -1,0 +1,7 @@
+.home-page {
+    background-image: url("/img/ap.png");
+    height: 80vh;
+    background-size: 75%;
+    background-repeat: no-repeat;
+    background-position: center;
+}

@@ -9,6 +9,7 @@ export default {
                 </div>
                 <textarea name="note" v-model="note.info.url" @input="add" placeholder="Enter image url" rows="6" cols="50">
                     </textarea> 
+                    <button title="Add" @click="addNote"><i class="far fa-save"></i></button>
                     <!-- <button @click="img"><input class="input-img" type="file"><i class="fas fa-image"></i></button> -->
                 <!-- <h2>Add Note:</h2> -->
                 <!-- <div>
@@ -52,6 +53,9 @@ export default {
         pin() {
             this.note.isPinned = !this.note.isPinned;
         },
+        addNote() {
+            this.$emit('addNewNote')
+        }
 
     },
 

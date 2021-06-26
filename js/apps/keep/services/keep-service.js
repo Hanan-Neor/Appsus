@@ -31,20 +31,20 @@ function _creatNotes() {
                     {
                         id: 'n101',
                         type: "noteTxt",
-                        isPinned: true,
+                        isPinned: false,
                         label: "Welcome!",
                         info: {
                             txt: " Here you can write and edit anything you want "
                         },
                         style: {
-                            backgroundColor: "#ffd700"
+                            backgroundColor: "#ffffe0"
                         }
 
                     },
                     // {
                     //     id: 'n102',
                     //     type: "noteTxt",
-                    //     isPinned: true,
+                    //     isPinned: false,
                     //     info: {
                     //         txt: "Fullstackaaaaaa!"
                     //     }
@@ -52,7 +52,7 @@ function _creatNotes() {
                     // {
                     //     id: 'n103',
                     //     type: "noteTxt",
-                    //     isPinned: true,
+                    //     isPinned: false,
                     //     info: {
                     //         txt: "Fullstack hhhh!"
                     //     }
@@ -60,14 +60,14 @@ function _creatNotes() {
                     {
                         id: 'n102',
                         type: "noteImg",
-                        isPinned: true,
+                        isPinned: false,
                         label: "My - Picture",
                         info: {
                             url: "https://dalicanvas.co.il/wp-content/uploads/2020/02/%D7%A9%D7%A7%D7%99%D7%A2%D7%94-%D7%A7%D7%9C%D7%90%D7%A1%D7%99%D7%AA-1.jpg",
                             title: ""
                         },
                         style: {
-                            backgroundColor: "#00d"
+                            backgroundColor: "#ffb6c1"
                         }
                     },
                     {
@@ -82,21 +82,21 @@ function _creatNotes() {
                             backgroundColor: "#cbf0f8"
                         }
                     },
-                    // {
-                    //     id: 'n103',
-                    //     type: "noteTodos",
-                    //     isPinned: true,
-                    //     info: {
-                    //         label: "How was it:",
-                    //         todos: [
-                    //             { txt: "Do that", doneAt: null },
-                    //             { txt: "Do this", doneAt: 187111111 }
-                    //         ]
-                    //     },
-                    //     style: {
-                    //         backgroundColor: "#C1C1C1"
-                    //     }
-                    // },
+                    {
+                        id: 'n104',
+                        type: "noteToDos",
+                        isPinned: false,
+                        info: {
+                            label: "How was it:",
+                            todos: [
+                                { txt: "Do that", doneAt: null },
+                                { txt: "Do this", doneAt: 187111111 }
+                            ]
+                        },
+                        style: {
+                            backgroundColor: "#C1C1C1"
+                        }
+                    },
 
                 ];
                 storageService.postMany(NOTES_KEY, notes);

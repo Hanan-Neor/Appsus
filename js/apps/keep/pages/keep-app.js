@@ -9,10 +9,10 @@ export default {
     name: 'keep-app',
     template: `
     <section class="keep-app">
-       <add-note @addNote="creatNote" />
        <keep-filter @filtered="setFilter"/>
+       <add-note @addNote="creatNote" />
        <!-- <keep-details v-if/> -->
-        <keep-list v-if="notes" :notes="notes" @remove="remove" @update="updateNote" @change="updateColor" />
+        <keep-list v-if="notes" :notes="notesToShow" @remove="remove" @update="updateNote" @change="updateColor" @changeDone="updateNote" />
         <!-- @changeImg="updateImg -->
         </section>
     </section>
@@ -21,7 +21,7 @@ export default {
     data() {
         return {
             notes: [],
-            filterBy: null
+            filterBy: ''
         }
     },
 
@@ -90,15 +90,15 @@ export default {
     },
 
     computed: {
-        // notesToShow() {
-        //     if (!this.filterBy) return this.notes;
-        //     console.log(filterBy)
-        //         // const searchStr = this.filterBy..toLowerCase();
-        //     const notesToShow = this.notes.filter(note => {
-        //         return note..toLowerCase().includes(searchStr);
-        //     });
-        //     return notesToShow;
-        // }
+        notesToShow() {
+            if (!this.filterBy) return this.notes;
+            const searchStr = this.filterBy.toLowerCase();
+            const notesToShow = this.notes.filter(note => {
+                if (note.type === "noteTxt")
+                    return note.label.toLowerCase().includes(searchStr);
+            });
+            return notesToShow;
+        }
 
 
     },

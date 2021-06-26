@@ -9,3 +9,8 @@
 @import '../cmps/add-note-img.css';
 @import '../cmps/add-note-video.css';
 @import '../cmps/note-video.css';
+@import '../cmps/note-todos.css';
+@import '../cmps/keep-filter.css';
+.keep-app {
+    min-height: 80vh;
+}

@@ -8,7 +8,7 @@ export default {
         <ul class="notes flex wrap ">
             <li v-for="note in notes" :key="note.id" class="note clean-list" :style="{ 'background-color' : note.style.backgroundColor }"  >
             <!-- :style="{ 'background-color' : note.style.backgroundColor }" --> 
-                <keep-preview :note="note" @remove="remove" @update="updateNote" @change="changeColor"/>
+                <keep-preview :note="note" @remove="remove" @update="updateNote" @change="changeColor" @changeDone="changeNoteDone"/>
                 <!-- @changeImg="changeImg -->
             </li>
         </ul>
@@ -26,6 +26,9 @@ export default {
         },
         changeColor(noteUpdateColor) {
             this.$emit('change', noteUpdateColor)
+        },
+        changeNoteDone(updateNote) {
+            this.$emit('changeDone', updateNote)
         },
         // changeImg(updateImg) {
         //     this.$emit('changeImg', updateImg)

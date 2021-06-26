@@ -19,7 +19,8 @@ export default {
         <button  class="btn-note" v-if="!edit" @click="editToggle"><i class="far fa-edit"></i></button>
         <div class="color">
             <div v-if="!edit" class="color-palete"><i class="fas fa-palette"></i></div> 
-            <input class="color-input" type="color" @input="setColor" v-model="note.style.backgroundColor"/>      
+            <input class="color-input" type="color" @input="setColor" v-model="note.style.backgroundColor"/>
+            <!-- <button><i class="fas fa-thumbtack" ></i></button>       -->
          </div>
      </div>
     

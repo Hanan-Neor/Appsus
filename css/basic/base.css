@@ -37,14 +37,22 @@ pre {
     font-family: inherit;
     white-space: pre;
     margin: 0;
-    white-space: pre-wrap;       /* css-3 */
- white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
- white-space: -pre-wrap;      /* Opera 4-6 */
- white-space: -o-pre-wrap;    /* Opera 7 */
- word-wrap: break-word;  
-  }
+    white-space: pre-wrap;
+    /* css-3 */
+    white-space: -moz-pre-wrap;
+    /* Mozilla, since 1999 */
+    white-space: -pre-wrap;
+    /* Opera 4-6 */
+    white-space: -o-pre-wrap;
+    /* Opera 7 */
+    word-wrap: break-word;
+}
 
-  button{
-      cursor: pointer;
-      font-family: inherit;
-  }
+button {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.fa-save {
+    margin: 0 10px 5px 0;
+}
