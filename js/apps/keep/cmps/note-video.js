@@ -1,5 +1,3 @@
-// import { eventBus } from "../../../services/event-bus-service.js";
-
 export default {
     props: ['note'],
     name: 'notVideo',
@@ -67,13 +65,6 @@ export default {
             let formatedUrl = url.replace('watch?v=', 'embed/')
             return formatedUrl;
         }
-
-
     },
-
-    componante: {
-        // eventBus
-    }
-
 
 };

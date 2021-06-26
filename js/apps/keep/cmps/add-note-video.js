@@ -1,7 +1,7 @@
 export default {
     template: `
     <section class="add-noteVideo ">
-    <div>
+                <div>
                     <label for="title">
                         <input name="title" v-model="note.info.title" @input="add" type="text" placeholder="Enter title" class="input-title"> 
                         <!-- <button title="Pin" @click="pin"></button> -->
@@ -10,19 +10,10 @@ export default {
                 <textarea name="note" v-model="note.info.url" @input="add" placeholder="Enter video url" rows="6" cols="50">
                     </textarea> 
                     <button title="Add" @click="addNote"><i class="far fa-save"></i></button>
-                    
-                    <!-- <button @click="img"><input class="input-img" type="file"><i class="fas fa-image"></i></button> -->
-                <!-- <h2>Add Note:</h2> -->
-                <!-- <div>
-                    <label for="title">
-                        <input name="title" v-model="note.label" @blur="add" type="text" placeholder="Title" class="input-title"> 
-                         <button title="Pin" @click="pin">📍</button> --> 
-                    <!-- </label> -->
-                <!-- </div> -->
-                <!-- <textarea name="note" v-model="note.info.txt" @blur="add" placeholder="Take a note..." rows="6" cols="50"> -->
-                    <!-- </textarea>  --> 
+                         <!-- <button title="Pin" @click="pin">📍</button> -->  -->
+           
                     <!-- <input type="file" ref="file"  @change="filePicked"/> -->
-                    <!-- <button title="Add" @click="addNote"><i class="far fa-save"></i></button> -->
+                
     </section>
     `,
 

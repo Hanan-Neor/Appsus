@@ -2,7 +2,6 @@ import { keepService } from '../services/keep-service.js';
 import keepList from '../cmps/keep-list.js'
 import addNote from '../cmps/add-note.js'
 import keepFilter from '../cmps/keep-filter.js'
-// import keepPreview from '../cmps/keep-preview.js'
 import { eventBus } from '../../../services/event-bus-service.js'
 
 export default {
@@ -32,11 +31,6 @@ export default {
             console.log(data)
             changeImg(data)
         });
-        // keepService.query()
-        //     .then(notes => {
-        //         this.notes = notes
-        //         console.log(notes);
-        //     })
     },
 
 
@@ -82,9 +76,7 @@ export default {
 
     },
 
-    // created() {
-    //     eventBus.$on('', this.showMsg);
-    // },
+
     destroyed() {
         eventBus.$off('updateImg');
     },

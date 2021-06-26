@@ -3,7 +3,6 @@ export default {
     template: `
 <section class="note-txt flex space-between column" v-if="note"  >
     <div>
-        
         <h2 v-if="!edit">{{note.label}}</h2>
         <input v-else v-model="note.label" class="edit-txt" type="text">
         <span v-if="!edit"><pre>{{note.info.txt}}</pre></span>
@@ -20,19 +19,15 @@ export default {
             <input class="color-input" type="color" @input="setColor" v-model="note.style.backgroundColor"/>
          </div>
      </div>
-
-
 </section>
 `,
 
     data() {
         return {
-            // note: this.note,
             // bgcStyle: this.note.style.backgroundColor || '#FFFFE0',
             edit: false
         }
     },
-
 
 
     methods: {
@@ -51,8 +46,6 @@ export default {
             console.log(this.note)
             this.$emit('change', this.note)
         }
-
-
 
     },
 };

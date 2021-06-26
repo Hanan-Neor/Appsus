@@ -8,7 +8,6 @@ export default {
                 <router-link to="/keep">Keep</router-link> |
                 <a href="https://hanan-neor.github.io/miss-books2/">Book</a>
         </nav> 
-        <!-- <hr />   -->
     </header>
     `,
     components: {}

@@ -22,12 +22,7 @@ export default {
              <div v-else >
                 <component :is="noteType" @add="editTypeNote" @addNewNote="addNote"/>
                 <div class="btn-add-note">
-                    <!-- <button v-if='isStyling' @click='color'></button>
-                    <input v-else v-model="bgcStyle" @change="color" type="color"> -->
-                        <!-- <button @click="img"><i class="fas fa-image"></i></button> -->
-                        <!-- <button @click="todos">ToDo</button> -->
-                        <!-- <button @click="txt">Text</button> -->
-                        <!-- <button title="Add" @click="addNote"><i class="far fa-save"></i></button> -->
+
                 </div>
              </div>
        </section>

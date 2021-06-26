@@ -1,6 +1,4 @@
-// import { utilService } from '../../../services/util-service.js';
 import { storageService } from '../../../services/async-storage-service.js'
-import addNote from '../cmps/add-note.js';
 const NOTES_KEY = 'notesBD'
 
 var gNotes = _creatNotes();
@@ -10,8 +8,6 @@ export const keepService = {
     remove,
     save,
     update
-    //     getEmptyNote,
-    //     addNote,
 }
 
 function query() {
@@ -41,22 +37,7 @@ function _creatNotes() {
                         }
 
                     },
-                    // {
-                    //     id: 'n102',
-                    //     type: "noteTxt",
-                    //     isPinned: false,
-                    //     info: {
-                    //         txt: "Fullstackaaaaaa!"
-                    //     }
-                    // },
-                    // {
-                    //     id: 'n103',
-                    //     type: "noteTxt",
-                    //     isPinned: false,
-                    //     info: {
-                    //         txt: "Fullstack hhhh!"
-                    //     }
-                    // },
+
                     {
                         id: 'n102',
                         type: "noteImg",
@@ -102,8 +83,6 @@ function _creatNotes() {
                 storageService.postMany(NOTES_KEY, notes);
             }
             return (notes)
-
-
         })
 
 }
@@ -113,18 +92,6 @@ function remove(noteId) {
     return storageService.remove(NOTES_KEY, noteId)
 
 }
-
-// function getEmptyNote() {
-//     let newNote = {
-//         id: utilService.makeId(),
-//         type: noteType
-//     }
-
-
-
-
-
-// }
 
 function save(note) {
     console.log('new-note:', note)

@@ -30,7 +30,6 @@ export default {
 
     data() {
         return {
-            // note: this.note,
             // bgcStyle: this.note.style.backgroundColor || '#FFFFE0',
             edit: false,
 
@@ -100,10 +99,6 @@ export default {
         // }
 
     },
-    componante: {
-        // eventBus
-    }
-
 
 };
 
