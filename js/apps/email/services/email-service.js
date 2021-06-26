@@ -1,4 +1,3 @@
-// import { utilService } from './util-service.js';
 import { storageService } from '../../../services/async-storage-service.js';
 
 const EMAILS_KEY = 'emailsDB';
@@ -6,9 +5,6 @@ const gEmails = _createEmails();
 
 export const emailService = {
     query,
-    // remove,
-    // save,
-    // getEmptyCar,
     getById,
     remove,
     save,
@@ -19,7 +15,6 @@ export const emailService = {
 function filter(emails, filterBy) {
     if (!filterBy || filterBy === '') return emails;
     return emails.filter(email => {
-        // return email.toLowerCase().includes(searchStr);
         return new RegExp(filterBy, 'i').test(JSON.stringify(email))
     })
 }
@@ -41,7 +36,6 @@ function sort(emails, sortBy) {
             break;
 
     }
-    // console.log(filteredEmails);
     return filteredEmails;
 
 }
@@ -82,16 +76,7 @@ function save(email) {
 function getById(emailId) {
     return storageService.get(EMAILS_KEY, emailId)
         .then(email => { return email })
-    // .then(email=> { return email})
 }
-
-// function getEmptyCar() {
-//     return {
-//         id: '',
-//         vendor: '',
-//         maxSpeed: 0
-//     };
-// }
 
 function _createEmails() {
     return storageService.query(EMAILS_KEY)
@@ -107,12 +92,10 @@ function _createEmails() {
             }
             return emails;
         });
-    // return emails;
 }
 
 function _createEmail(id, from, subject, body, isRead, sentAt = Date.now()) {
     const email = {
-        // id: storageService.makeId(),
         id,
         from,
         subject,

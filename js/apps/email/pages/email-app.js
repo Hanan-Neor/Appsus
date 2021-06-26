@@ -6,21 +6,15 @@ export default {
         <section class="email-app main-layout flex">
         
             <nav>
-                <!-- <router-link to="/email/email-compose"> <button>New +</button></router-link> -->
                 <div><router-link to="/email/email-compose"> <button>New message</button></router-link></div>
                 <ul class="clean-list">
                     <router-link to="/email/email-list"><li><span>inbox</span></li></router-link>
-                    <router-link to=""> <li><span>read</span></li></router-link>
-                    <router-link to=""><li><span>unread</span></li></router-link>
-                    <router-link to=""> <li><span>sent</span></li></router-link>
-                    <router-link to=""> <li><span>sent</span></li></router-link>
-                    <router-link to=""><li><span>favorites</span></li></router-link>
+                     <li style="cursor:default"><span>read</span></li>
+                    <li style="cursor:default"><span>unread</span></li>
+                     <li style="cursor:default"><span>sent</span></li>
+                    <li style="cursor:default"><span>favorites</span></li>
                 </ul>
             </nav>
-            <!-- <article> -->
-                <!-- <email-list :emails="emails" /> -->
-                <!-- </article> -->
-                
                 <router-view></router-view>
 
         </section>

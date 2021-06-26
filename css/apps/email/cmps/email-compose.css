@@ -73,6 +73,11 @@ border-radius: 0.4rem;
 color: white;
 }
 
+.email-compose .send-container button:first-child:hover{
+    background-color: rgb(100, 189, 245);
+
+}
+
 
 .email-compose .send-container{
     /* background-color: maroon; */

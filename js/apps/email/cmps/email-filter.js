@@ -1,6 +1,6 @@
 export default {
     props: ['unReadCnt'],
-    template:`
+    template: `
     <section class="email-filter flex">
         <button @click="filterAll">All</button>
         <button @click="filterRead">Read</button>
@@ -14,30 +14,30 @@ export default {
         
         
     `,
-    data(){
+    data() {
         return {
-            searchInput:null,
-            sortBy:'Oldest first'
+            searchInput: null,
+            sortBy: 'Oldest first'
         }
     },
-    methods:{
-        searchEmail(){
-            this.$emit('searchEmail',this.searchInput)
+    methods: {
+        searchEmail() {
+            this.$emit('searchEmail', this.searchInput)
         },
-        filterAll(){
-            this.$emit('filterState',null)
+        filterAll() {
+            this.$emit('filterState', null)
         },
-        filterRead(){
-            this.$emit('filterState',true)
-            
-        },
-        flterUnread(){
-            this.$emit('filterState',false)
+        filterRead() {
+            this.$emit('filterState', true)
 
         },
-        sortEmails(){
+        flterUnread() {
+            this.$emit('filterState', false)
+
+        },
+        sortEmails() {
             console.log(this.sortBy);
-            this.$emit('sortBy',this.sortBy)
+            this.$emit('sortBy', this.sortBy)
         }
 
     }

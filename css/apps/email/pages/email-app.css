@@ -36,7 +36,10 @@ text-align: center;
     font-family: OpenSans-Bold;
 
 }
+.email-app nav button:hover{
+    background-color: rgb(100, 189, 245);
 
+}
 .email-app nav li {
     padding:4px;
 

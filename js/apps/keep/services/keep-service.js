@@ -82,21 +82,21 @@ function _creatNotes() {
                             backgroundColor: "#cbf0f8"
                         }
                     },
-                    {
-                        id: 'n104',
-                        type: "noteToDos",
-                        isPinned: false,
-                        info: {
-                            label: "How was it:",
-                            todos: [
-                                { txt: "Do that", doneAt: null },
-                                { txt: "Do this", doneAt: 187111111 }
-                            ]
-                        },
-                        style: {
-                            backgroundColor: "#C1C1C1"
-                        }
-                    },
+                    // {
+                    //     id: 'n104',
+                    //     type: "noteToDos",
+                    //     isPinned: false,
+                    //     info: {
+                    //         label: "How was it:",
+                    //         todos: [
+                    //             { txt: "Do that", doneAt: null },
+                    //             { txt: "Do this", doneAt: 187111111 }
+                    //         ]
+                    //     },
+                    //     style: {
+                    //         backgroundColor: "#C1C1C1"
+                    //     }
+                    // },
 
                 ];
                 storageService.postMany(NOTES_KEY, notes);
