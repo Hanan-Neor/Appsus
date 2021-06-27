@@ -7,6 +7,32 @@
 }
 
 .app-header img {
-/* width: 100px; */
-height: 10vh;
+    /* width: 100px; */
+    height: 10vh;
+}
+
+.app-header nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: fixed;
+    z-index: 2;
+    color: black;
+    background-color: white;
+    top: 10vh;
+    right: 1rem;
+    padding: 1.5rem;
+    border-radius: 20px;
+    border: 1px solid black;
+
+
+-webkit-user-select: none;
+-moz-user-select: none;
+-khtml-user-select: none;
+-ms-user-select: none;
+}
+
+.app-header nav img:hover {
+    transform: scale(1.15);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
