@@ -9,10 +9,10 @@ export default {
                 <div><router-link to="/email/email-compose"> <button>New message</button></router-link></div>
                 <ul class="clean-list">
                     <router-link to="/email/email-list"><li><span>inbox</span></li></router-link>
-                     <li style="cursor:default"><span>read</span></li>
+                     <!-- <li style="cursor:default"><span>read</span></li>
                     <li style="cursor:default"><span>unread</span></li>
                      <li style="cursor:default"><span>sent</span></li>
-                    <li style="cursor:default"><span>favorites</span></li>
+                    <li style="cursor:default"><span>favorites</span></li> -->
                 </ul>
             </nav>
                 <router-view></router-view>

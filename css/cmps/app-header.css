@@ -5,3 +5,8 @@
     padding: 1rem;
     font-family: OpenSans-Bold;
 }
+
+.app-header img {
+/* width: 100px; */
+height: 10vh;
+}
