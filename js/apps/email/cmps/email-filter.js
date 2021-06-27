@@ -42,10 +42,10 @@ export default {
 
     },
     created(){
-        setTimeout(()=>{
+        // setTimeout(()=>{
 
-            this.$refs['searchInput'].focus()
-        },500)
+        //     this.$refs['searchInput'].focus()
+        // },500)
     }
 
 
