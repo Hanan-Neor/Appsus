@@ -10,7 +10,7 @@ New message
         <form @submit="onSubmitEmail">
        <div class="flex align-center"><span>To: </span><input type="email" v-model="to"></div>
        <div class="flex align-center"><span>Subject: </span><input type="text" v-model="subject"></div>
-       <div class="teaxarea-container"><textarea v-model="body"></textarea></div>
+       <div class="teaxarea-container"><textarea v-model="body" ref="message"></textarea></div>
     </form>
 </main>
 <div class="send-container">
@@ -46,10 +46,6 @@ New message
         onTrashClick() {
             this.$router.push('/email/email-list');
         },
-        replying(replyedEmail) {
-            this.to = replyedEmail.from;
-            this.subject = 'Re: ' + replyedEmail.subject;
-        },
 
 
     },
@@ -60,18 +56,31 @@ New message
         emailService
     },
     created() {
+
+        const { emailId } = this.$route.params;
+        if(emailId){
+            emailService.getById(emailId)
+                .then(email => {
+                    this.to = email.from;
+                    this.subject ='Re: '+email.subject
+                    // this.body = email.body;
+                    this.$refs['message'].focus();
+                })
+        }
+
+
         // this.to = '',
         // this.subject= null,
         // this.body= null,
 
         
-        eventBus.$on('reply', (replyedEmail) => {
-            setTimeout(() => {
-                this.replying(replyedEmail);
-                console.log(replyedEmail);
+        // eventBus.$on('reply', (replyedEmail) => {
+        //     setTimeout(() => {
+        //         this.replying(replyedEmail);
+        //         console.log(replyedEmail);
 
-            }, 1000)
-        })
+        //     }, 1000)
+        // })
     },
     // destroyed(){
     //     eventBus.$off('reply');

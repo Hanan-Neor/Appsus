@@ -5,7 +5,7 @@ export default {
         <button @click="filterAll">All</button>
         <button @click="filterRead">Read</button>
         <button @click="flterUnread">Unread ({{unReadCnt}})</button>
-        <input class="search-input" type="search" v-model="searchInput" @input="searchEmail" placeholder="Type to search">
+        <input class="search-input" type="search" ref="searchInput" v-model="searchInput" @input="searchEmail" placeholder="Type to search">
         <select v-model="sortBy" @change="sortEmails">
         <option>Oldest first</option>
         <option>Newest first</option>
@@ -40,6 +40,12 @@ export default {
             this.$emit('sortBy', this.sortBy)
         }
 
+    },
+    created(){
+        setTimeout(()=>{
+
+            this.$refs['searchInput'].focus()
+        },500)
     }
 
 
