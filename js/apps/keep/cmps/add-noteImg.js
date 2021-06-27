@@ -11,17 +11,9 @@ export default {
                     </textarea> 
                     <button title="Add" @click="addNote"><i class="far fa-save"></i></button>
                     <!-- <button @click="img"><input class="input-img" type="file"><i class="fas fa-image"></i></button> -->
-                <!-- <h2>Add Note:</h2> -->
-                <!-- <div>
-                    <label for="title">
                         <input name="title" v-model="note.label" @blur="add" type="text" placeholder="Title" class="input-title"> 
-                         <button title="Pin" @click="pin">📍</button> -->
-                    <!-- </label> -->
-                <!-- </div> -->
-                <!-- <textarea name="note" v-model="note.info.txt" @blur="add" placeholder="Take a note..." rows="6" cols="50"> -->
-                    <!-- </textarea>  --> 
-                    <!-- <input type="file" ref="file"  @change="filePicked"/> -->
-                    <!-- <button title="Add" @click="addNote"><i class="far fa-save"></i></button> -->
+                         <!-- <button title="Pin" @click="pin">📍</button> --> -->
+                 
     </section>
     `,
 
