@@ -10,7 +10,6 @@ export default {
     <section class="keep-app">
        <keep-filter @filtered="setFilter"/>
        <add-note @addNote="creatNote" />
-       <!-- <keep-details v-if/> -->
         <keep-list v-if="notes" :notes="notesToShow" @remove="remove" @update="updateNote" @change="updateColor" @changeDone="updateNote" />
         <!-- @changeImg="updateImg -->
         </section>

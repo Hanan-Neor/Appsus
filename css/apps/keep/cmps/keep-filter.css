@@ -1,14 +1,9 @@
 .keep-filter {
-    /* align-items: center; */
-    /* text-align: center; */
-    /* -webkit-box-shadow: 1px 2px 10px 2px rgba(0, 0, 0, 0.45);
-    box-shadow: 1px 2px 10px 2px rgba(0, 0, 0, 0.45); */
     width: 60vw;
     border-radius: 10px;
     border: 1px gray solid;
     margin: auto;
     font-family: OpenSans-Bold;
-    margin-top: 10px;
 }
 
 .keep-filter input {
