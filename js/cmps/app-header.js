@@ -19,13 +19,19 @@ export default {
     methods: {
         togglingMenu() {
             this.toggleMenu = !this.toggleMenu;
-        }
+        },
+        close (e) {
+            if (!this.$el.contains(e.target)) {
+            //   this.state = false
+              this.toggleMenu = false
+            }
+          }
     },
-    // mounted() {
-    //     document.addEventListener('click', this.close)
-    // },
-    // beforeDestroy() {
-    //     document.removeEventListener('click', this.close)
-    // },
-    // components: {}
+    mounted() {
+        document.addEventListener('click', this.close)
+    },
+    beforeDestroy() {
+        document.removeEventListener('click', this.close)
+    },
+    components: {}
 }
