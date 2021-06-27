@@ -54,17 +54,15 @@ flex: 1;
 }
 
 
-.home-page .welcome .links div:hover{
+.home-page .welcome .links div :hover{
     cursor: pointer;
-    transform: scale(1.05);
+    /* transform: scale(1.05); */
+    transform: scale(1.15);
     transition: transform 0.3s, box-shadow 0.3s  ;
     
-    box-shadow: -3px 3px 8px 2px rgb(0, 0, 0, 0.60);
+    /* box-shadow: -3px 3px 8px 2px rgb(0, 0, 0, 0.60);
     -webkit-box-shadow: -3px 3px 8px 2px rgb(0, 0, 0, 0.60);
-    -moz-box-shadow: -3px 3px 8px 2px rgb(0, 0, 0, 0.60);
-    /* box-shadow: 0px 0px 8px 5px rgb(0, 0, 0,0.60);
-    -webkit-box-shadow: 0px 0px 8px 5px rgb(0, 0, 0,0.60);
-    -moz-box-shadow: 0px 0px 8px 5px rgb(0, 0, 0,0.60); */
+    -moz-box-shadow: -3px 3px 8px 2px rgb(0, 0, 0, 0.60); */
     }
     
     .home-page .welcome .links div img{
