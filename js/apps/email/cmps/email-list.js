@@ -95,7 +95,14 @@ export default {
         this.filterByStatus(null)
         eventBus.$on('deleted', (emailId) => {
             this.removeEmail(emailId);
-        })
+        });
+
+
+        eventBus.$on('isRead', (status) => {
+            this.filterByStatus(status);
+        });
+        
+
     },
 
 }
