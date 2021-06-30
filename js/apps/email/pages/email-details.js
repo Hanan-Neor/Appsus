@@ -46,8 +46,8 @@ export default {
 
         },
         replyToEmail() {
-            eventBus.$emit('reply', this.email);
-            this.$router.push('/email/email-compose');
+            // eventBus.$emit('reply', this.email);
+            this.$router.push('/email/email-compose/'+this.email.id);
         }
     },
     computed: {

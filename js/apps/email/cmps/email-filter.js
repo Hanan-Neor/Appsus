@@ -40,6 +40,12 @@ export default {
             this.$emit('sortBy', this.sortBy)
         }
 
+    },
+    created() {
+        // setTimeout(()=>{
+
+        //     this.$refs['searchInput'].focus()
+        // },500)
     }
 
 

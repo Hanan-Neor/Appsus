@@ -85,9 +85,23 @@ padding-left: 0.8rem;
 }
 
 @media (max-width: 400px) {
+    .email-preview{
+        /* flex-direction: column; */
+    }
+    .email-filter{
+flex-wrap: wrap;
+    }
+    .email-filter input{
+        order: -1;
+    }
+
     .email-preview div:nth-child(2){
             order:1;
+            width: 300px;
     }
+    /* .email-preview div:nth-child(1){
+display: inline-block;
+    } */
 }
 
     
