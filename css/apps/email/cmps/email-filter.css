@@ -4,6 +4,7 @@
 
 .email-filter button{
     white-space: nowrap;
+
 }
 
 .email-filter input{
@@ -13,4 +14,10 @@
     font-size: 1rem;
     height: 1.8rem;
     border-radius: 0.3rem;
+}
+
+.email-app select{
+    font-size: 1rem;
+    /* height:3rem; */
+    /* min-width: 3rem; */
 }
