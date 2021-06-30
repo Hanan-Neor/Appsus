@@ -4,8 +4,9 @@ export default {
     template: `
      <router-link :to="'/email/'+email.id">
     <li class="email-preview" v-bind:class="isRead" v-on:mouseover="hovering" v-on:mouseleave="leaving">
-        <div>{{email.from}}</div>
-        <div>{{email.subject}} - <span class="email-body-inlist">{{email.body}}</span></div>
+        <div class="grid-container">
+        <div class="from">{{email.from}}</div>
+        <div class="subject">{{email.subject}} - <span class="email-body-inlist">{{email.body}}</span></div>
         <div class ="date-and-buttons">
                     <div v-show="!hover" v-on:mouseover="leaving" v-on:mouseleave="hovering">{{dateToShow}}</div>
                     <div v-show="hover" class="email-buttons" >
@@ -16,6 +17,7 @@ export default {
                         <button v-on:click.prevent="deleteEmail(email.id)"><i class="far fa-trash"></i></button>
                 </div>
         </div>
+</div>
     </li>
 </router-link>
           `,

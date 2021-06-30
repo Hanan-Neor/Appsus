@@ -13,6 +13,7 @@ export default {
         @deleted="removeEmail" 
           @toggleIsRead="togglingIsRead"/>
     </ul>
+    <router-link to="/email/email-compose"><button class="new-message-button-mobile"><i class="fas fa-pencil-alt"></i></button></router-link>
 </section>
 
      `,

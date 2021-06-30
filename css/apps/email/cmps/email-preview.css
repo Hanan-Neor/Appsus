@@ -1,6 +1,5 @@
 .email-preview{
-    display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 
     /* justify-content:space-between ; */
     /* margin-bottom: 5px; */
@@ -9,6 +8,11 @@
     box-shadow:inset 0px -1px 0px 0px rgb(211, 211, 211);
     /* flex-shrink: 1; */
     
+}
+.email-preview .grid-container{
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+
 }
 
 .email-preview:hover{
@@ -25,19 +29,19 @@ font-weight: normal;
 }
 
 .email-preview div:first-child{
-    min-width: fit-content;
-    flex:2;
+    /* min-width: fit-content; */
+    /* flex:2; */
 }
 
 .email-preview div:nth-child(2){
     /* min-width: fit-content; */
     /* min-width:fit-content; */
-    flex:7;
+    /* flex:7; */
 
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    width: 60px;
+    /* width: 60px; */
     
 }
 .email-preview .email-body-inlist{
@@ -46,25 +50,33 @@ font-weight: normal;
 
 }
 .email-preview .date-and-buttons{
-    flex:2;
+    display: flex;
+    justify-content: flex-end;
+    /* flex:2; */
     /* min-width: fit-content; */
-    text-align: center;
+    /* text-align: right; */
     /* text-align: right; */
     position: relative;
-    width:fit-content;
+    /* width:fit-content; */
 }
 
 .email-preview .email-buttons{
+    /* text-align: right; */
     /* text-align: center; */
-    display: flex;
+    /* width: 100%; */
+    display:flex;
+    /* justify-content: space-evenly; */
     /* width:fit-content; */
-    width:54px;
+    /* width:54px; */
     /* justify-content: center; */
     position: absolute;
-    left:50%;
+    gap:0.5rem;
+    /* right:0 */
+    right:0.5rem;
+    /* left:50%; */
     /* left:-50%; */
     /* left:0; */
-    transform: translateX(-50%);
+    /* transform: translateX(-50%); */
     top:-3px;
     background-color:inherit;
     border-radius: 3rem;
