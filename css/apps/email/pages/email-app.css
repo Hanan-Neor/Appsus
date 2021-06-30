@@ -103,6 +103,13 @@ padding-left: 0.8rem;
         height:3rem;
         /* min-width: 3rem; */
     }
+.email-compose .send-container button {
+    font-size: 1.3rem;
+    height:3rem;
+    min-width: 3rem;
+
+
+}
 .email-list .new-message-button-mobile{
 width: 60px;
 height: 60px;
