@@ -1,4 +1,3 @@
-
 @import '../cmps/keep-list.css';
 @import '../cmps/keep-preview.css';
 @import '../cmps/add-note.css';
@@ -6,6 +5,7 @@
 @import '../cmps/note-txt.css';
 @import '../cmps/note-img.css';
 @import '../cmps/add-note-img.css';
+@import '../cmps/add-not-to-dos.css';
 @import '../cmps/add-note-video.css';
 @import '../cmps/note-video.css';
 @import '../cmps/note-todos.css';

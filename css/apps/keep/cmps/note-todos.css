@@ -1,3 +1,18 @@
 .styleTodo {
     text-decoration: line-through;
 }
+
+.note-todos {
+    flex-grow: 1;
+}
+
+.note-todos .btn-save {
+    background-color: transparent;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+.note-todos input {
+    margin-bottom: 10px;
+}

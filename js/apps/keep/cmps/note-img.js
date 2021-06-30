@@ -8,7 +8,8 @@ export default {
     <div>
         
         <h2 v-if="!edit">{{note.info.title}}</h2>
-        <input v-else v-model="note.info.url" class="edit-txt" type="text">
+        <input v-else v-model="note.info.url" class="edit-img"  type="text">
+        <input v-if="edit" v-model="note.label" class="edit-title" type="text">
         <img class="note-img"  width=100% :src="note.info.url">
         <button class="btn-save" v-if="edit" @click.stop.prevent="updateNote"><i class="far fa-save"></i></button>
     </div>

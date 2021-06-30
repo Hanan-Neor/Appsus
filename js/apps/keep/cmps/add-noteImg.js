@@ -12,7 +12,7 @@ export default {
                     <button title="Add" @click="addNote"><i class="far fa-save"></i></button>
                     <!-- <button @click="img"><input class="input-img" type="file"><i class="fas fa-image"></i></button> -->
                         <input name="title" v-model="note.label" @blur="add" type="text" placeholder="Title" class="input-title"> 
-                         <!-- <button title="Pin" @click="pin">📍</button> --> -->
+                         <!-- <button title="Pin" @click="pin">📍</button> --> 
                  
     </section>
     `,
@@ -30,7 +30,7 @@ export default {
                     title: ""
                 },
                 style: {
-                    backgroundColor: null,
+                    backgroundColor: '#ffb6c1',
                 },
             },
         }

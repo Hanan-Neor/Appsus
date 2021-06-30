@@ -3,15 +3,19 @@ export default {
     template: `
 <section class="note-todos flex space-between column" v-if="note"  >
     <div>
-        
-        <h2 v-if="!edit">{{note.label}}</h2>
-        <input v-if="edit" v-model="note.label" class="edit-txt" type="text">
-        <li class="todo"  v-for=" (item ,idx) in note.info.todos">
-        <!-- <p> {{item.txt}} {{}}</p>   -->
-        <p @click="changeTodo(idx)" :class="isDone(item)"> {{item.txt}}</p>  
-        </li>
-        <input  v-if="edit" v-model=note.info.txt type="text" class="edit-txt">
-        <button class=btn-save v-if="edit" @click.stop.prevent="updateNote"><i class="far fa-save"></i></button>
+   
+        <ul>
+            <h2 v-if="!edit">{{note.info.label}}</h2>
+
+            <input v-if="edit" v-model="note.info.label" class="edit-label" type="text">
+            <li class="todo"  v-for=" (item ,idx) in note.info.todos">
+                <p @click="changeTodo(idx)" :class="isDone(item)"> {{item.txt}}</p>  
+            </li>
+            <form @submit=addToDo() v-if="edit"> 
+            <input  v-if="edit" v-model=newToDo type="text" class="edit-txt" placeholder="Add todo">
+            </form>
+            <button class=btn-save v-if="edit" @click.stop.prevent="updateNote"><i class="far fa-save"></i></button>
+        </ul>
     </div>
 
     <div class="container-btn">
@@ -32,11 +36,20 @@ export default {
         return {
             // note: this.note,
             // bgcStyle: this.note.style.backgroundColor || '#FFFFE0',
-            edit: false
+            edit: false,
+            newToDo: "",
         }
     },
 
     methods: {
+        addTodo() {
+
+            this.note.info.todos.txt.push({ todo: this.newTodo, doneAt: null });
+            notesService.saveTodos(this.note.info.todos).then(updateTodos => {
+                this.note.info.todos = updateTodos;
+                this.newTodo = ''
+            })
+        },
         remove() {
             this.$emit('remove', this.note.id)
         },
